@@ -1,3 +1,9 @@
+import * from 'jquery';
+
 $(window).on('load', () => {
-	console.log('Loaded!');
+
+	$('#toggle-nav').on('click', function() {
+		$('.nav-container').toggleClass('nav-container--opened');
+	});
+
 });

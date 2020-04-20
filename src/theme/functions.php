@@ -50,3 +50,13 @@ function wordpressify_widgets() {
 }
 
 add_action( 'widgets_init', 'wordpressify_widgets' );
+
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'main-menu' => __( 'Main' ),
+            'secondary menu' => __( 'Secondary-menu' )
+        )
+    );
+}
+add_action( 'init', 'register_my_menus' );

@@ -1,5 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap');
+@import './abstracts/mixins';
+
+:root {
+  --body-background-color: #fff;
+  --font-color: #252525;
+  --header-height: 108px;
+
+  --light-gray: #E0E0E0;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Darker Grotesque', sans-serif;
+  background-color: var(--body-background-color);
+  color: var(--font-color);
+
+  &.dark-theme {
+    --body-background-color: #252525;
+    --font-color: #fff;
+  }
+}
+
+.header {
+  height: var(--header-height);
+  background-color: var(--body-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  .toggle-nav-button {
+    font-size: 1em;
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    padding: 0 2em 0 1em;
+    line-height: 3em;
+    position: relative;
+
+    &:focus span {
+      right: 8px;
+
+      &::before,
+      &::after {
+        right: -4px;
+      }
+    }
+
+    // refactor in future
+    span {
+      width: 16px;
+      height: 2px;
+      positioN: absolute;
+      display: block;
+      top: 50%;
+      right: 0;
+      transform: translateY(-3px);
+      background-color: var(--font-color);
+
+      &::before,
+      &::after {
+        content: '';
+        width: 16px;
+        height: 2px;
+        positioN: absolute;
+        display: block;
+        top: 50%;
+        right: 4px;
+        transform: translateY(-8px);
+        background-color: var(--font-color);
+      }
+      &::after {
+        transform: translateY(6px)
+      }
+
+    }
+  }
+}
+
+.nav-container {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--body-background-color);
+
+  &--opened {
+    display: block;
+  }
+
+  &__menus {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+
+    @include res(desktop) {
+      flex-direction: row;
+    }
+  }
+
+  .menu-main-container {
+    width: 445px;
+    margin: auto;
+  }
+
+  .menu {
+    list-style: none;
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      font-size: 2em;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--font-color);
+    }
+  }
+}
+
+.opening-hours {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--body-background-color);
+  font-weight: 900;
+  border: 0;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1em;
+  text-transform: uppercase;
+
+  &__icon {
+    margin-right: 0.5rem;
+    color: var(--light-gray);
+  }
+}
+
+.slider {
+  min-height: calc(100vh - var(--header-height));
+  background-color: #09f;
 }
