@@ -8,6 +8,10 @@ $( window ).on( 'load', function() {
 		$( '.opening-hours__content' ).toggleClass( 'opening-hours__content--opened' );
 	} );
 
+	$( '.contrast-button' ).on( 'click', function() {
+		$( 'body' ).toggleClass( 'dark-theme' );
+	} );
+
 	const menuLinks = $( '.nav-container__menus .menu a' );
 	$( menuLinks ).on( 'mouseenter', function() {
 		menuLinks.not( $( this ) ).addClass( 'not-active' );
