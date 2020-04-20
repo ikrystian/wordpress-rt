@@ -131,4 +131,12 @@
     </div>
 </section>
 
+<section class="section section--today">
+    <h3 class="section__title">Dziś</h3>
+    <span class="section__date">Czwartek</span>
+    <ul class="featured-list">
+        <li>asdasda</li>
+    </ul>
+</section>
+
 <?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>

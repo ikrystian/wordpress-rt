@@ -8,6 +8,8 @@
 
   --light-gray: #E0E0E0;
   --category-border-color: #eeeeee;
+  --feature-section-background-color: #252525;
+  --feature-section-color: #fff;
 }
 
 * {
@@ -31,7 +33,9 @@ body {
     --body-background-color: #252525;
     --font-color: #fff;
     --light-gray: #E0E0E0;
-    --category-border-color: #eeeeee;
+    --category-border-color: #252525;
+    --feature-section-background-color: #eeeeee;
+    --feature-section-color: #252525;
   }
 }
 
@@ -379,5 +383,20 @@ body {
     font-weight: 500;
     line-height: 150%;
     font-size: 1em;
+  }
+}
+
+.section {
+  padding: 2rem;
+
+  &__title {
+    color:  var(--feature-section-color);
+    font-size: 4.5em;
+    font-weight: 900;
+  }
+
+  &--today {
+    color:  var(--feature-section-color);
+    background-color: var(--feature-section-background-color);
   }
 }
