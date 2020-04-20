@@ -19,5 +19,16 @@ $( window ).on( 'load', function() {
 		menuLinks.removeClass( 'not-active' );
 	} );
 } );
+
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+	const currentScrollPos = window.pageYOffset;
+	if (prevScrollpos > currentScrollPos) {
+		document.getElementById( 'header' ).style.top = '0';
+	} else {
+		document.getElementById( 'header' ).style.top = '-108px';
+	}
+	prevScrollpos = currentScrollPos;
+};
 // zrobimy refactor do czystego js
 
