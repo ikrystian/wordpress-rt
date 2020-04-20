@@ -7,7 +7,8 @@ $( window ).on( 'load', function() {
 	$( '.opening-hours__button' ).on( 'click', function() {
 		$( '.opening-hours__content' ).toggleClass( 'opening-hours__content--opened' );
 	} );
-	let menuLinks = $( '.menu-main-container a' );
+
+	const menuLinks = $( '.nav-container__menus .menu a' );
 	$( menuLinks ).on( 'mouseenter', function() {
 		menuLinks.not( $( this ) ).addClass( 'not-active' );
 	} ).on( 'mouseleave', function() {
