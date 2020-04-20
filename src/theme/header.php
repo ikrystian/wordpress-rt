@@ -22,8 +22,8 @@
 <div class="nav-container">
     <div class="nav-container__menus">
         <?php
-        wp_nav_menu();
-        wp_nav_menu();
+        wp_nav_menu(array('theme_location' => 'main-menu'));
+        wp_nav_menu(array('theme_location' => 'secondary-menu'));
         ?>
     </div>
 </div>

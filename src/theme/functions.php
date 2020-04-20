@@ -55,7 +55,7 @@ function register_my_menus() {
     register_nav_menus(
         array(
             'main-menu' => __( 'Main' ),
-            'secondary menu' => __( 'Secondary-menu' )
+            'secondary-menu' => __( 'Secondary menu' )
         )
     );
 }
