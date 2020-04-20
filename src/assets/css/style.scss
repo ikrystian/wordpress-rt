@@ -17,6 +17,7 @@
 
 button {
   cursor: pointer;
+  font-family: 'Darker Grotesque', sans-serif;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  z-index: 2;
 
   .toggle-nav-button {
     font-size: 1em;
@@ -81,6 +83,7 @@ body {
         transform: translateY(-8px);
         background-color: var(--font-color);
       }
+
       &::after {
         transform: translateY(6px)
       }
@@ -97,6 +100,8 @@ body {
   bottom: 0;
   right: 0;
   background-color: var(--body-background-color);
+  z-index: 1;
+  overflow: hidden;
 
   &--opened {
     display: block;
@@ -141,18 +146,61 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: var(--body-background-color);
-  font-weight: 900;
-  border: 0;
-  padding: 0.5rem 1rem;
-  display: inline-flex;
-  align-items: center;
-  font-size: 1em;
-  text-transform: uppercase;
+
+  &__content {
+    position: absolute;
+    background-color: var(--body-background-color);
+    bottom: 37px;
+    padding: 2rem 2rem 1rem 2rem;
+    width: 315px;
+    right: 0;
+    display: none;
+
+    &--opened {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: 900;
+    line-height: 125%;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    background-color: var(--body-background-color);
+    font-weight: 900;
+    border: 0;
+    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
 
   &__icon {
     margin-right: 0.5rem;
+    @include size(15px);
     color: var(--light-gray);
+  }
+
+  dl {
+    padding: 1rem;
+  }
+
+  dt {
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 125%;
+  }
+
+  dd {
+    font-weight: 500;
   }
 }
 

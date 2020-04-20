@@ -27,11 +27,59 @@
         ?>
     </div>
 </div>
+<div class="opening-hours">
 
-<button class="opening-hours">
-    <span class="opening-hours__icon material-icons">query_builder</span>
-    <span class="opening-hours__text">godziny otwarcia</span>
-</button>
+    <section class="opening-hours__content" role="dialog">
+        <div class="opening-hours__gallery">
+            <h1 class="opening-hours__title">Galeria XXX</h1>
+            <span class="opening-hours__location">
+                <span class="opening-hours__icon material-icons" aria-hidden="true">room</span>
+                <span>ul. Lublin</span>
+            </span>
+
+            <dl>
+                <dt>Wystawy</dt>
+                <dd>Wtorek - Niedziela: 12:00 - 19:00</dd>
+                <dt>Biuro</dt>
+                <dd>Poniedziałem - Piątek: 8:00 - 16:00</dd>
+            </dl>
+
+        </div>
+
+        <div class="opening-hours__gallery">
+            <h1 class="opening-hours__title">Galeria XXX</h1>
+            <span class="opening-hours__location">
+                <span class="opening-hours__icon material-icons" aria-hidden="true">room</span>
+                <span>ul. Lublin</span>
+            </span>
+
+            <dl>
+                <dt>Wystawy</dt>
+                <dd>Wtorek - Niedziela: 12:00 - 19:00</dd>
+            </dl>
+
+        </div>
+
+        <div class="opening-hours__gallery">
+            <h1 class="opening-hours__title">Galeria XXX</h1>
+            <span class="opening-hours__location">
+                <span class="opening-hours__icon material-icons" aria-hidden="true">room</span>
+                <span>ul. Lublin</span>
+            </span>
+
+            <dl>
+                <dt>Wystawy</dt>
+                <dd>Wtorek - Niedziela: 12:00 - 19:00</dd>
+            </dl>
+
+        </div>
+    </section>
+
+    <button class="opening-hours__button">
+        <span class="opening-hours__icon material-icons">query_builder</span>
+        <span class="opening-hours__text">godziny otwarcia</span>
+    </button>
+</div>
 
 <section class="slider">
     lore

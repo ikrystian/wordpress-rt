@@ -29,3 +29,9 @@ $bp-wide: 105em; // 1680px
     }
   }
 }
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+  font-size: $size;
+}
