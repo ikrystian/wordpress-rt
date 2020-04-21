@@ -1,14 +1,16 @@
 <?php get_header(); ?>
 <!-- site-content -->
 <article class="page">
-    <header class="single-page__header">
-        <h1 class="single-page__title">Wystawy</h1>
-        <div class="single-page__header-actions">
-            <button class="filters-button">
-                <span>pokaż filtry</span>
-            </button>
-        </div>
-    </header>
+    <div class="container">
+        <header class="single-page__header">
+            <h1 class="single-page__title">Wystawy</h1>
+            <div class="single-page__header-actions">
+                <button class="filters-button">
+                    <span>pokaż filtry</span>
+                </button>
+            </div>
+        </header>
+    </div>
 
     <aside class="filters">
         <div class="container">
@@ -79,8 +81,8 @@
         ?>
     </div>
     <!-- /main-column -->
-    <div class="pagination side">
-        <?php echo paginate_links(); ?>
+    <div class="pagination container">
+        <?php echo paginate_links(array('type' => 'list')); ?>
     </div>
 </article>
 <!-- /site-content -->

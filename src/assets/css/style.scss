@@ -266,6 +266,7 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+  z-index: 5;
 
   &__content {
     position: absolute;
@@ -597,6 +598,7 @@ body {
 
 .post {
   position: relative;
+  margin-bottom: 1rem;
 
   &--disabled,
   &:nth-child(2) {
@@ -634,6 +636,7 @@ body {
         li:first-of-type {
           background-color: #fff;
           color: var(--font-color);
+
           &:before {
             display: block;
           }
@@ -712,4 +715,104 @@ body {
       }
     }
   }
+}
+
+ul.page-numbers {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0 120px;
+  margin-bottom: 2rem;
+
+  li {
+    font-size: 1em;
+    font-weight: 900;
+    margin: 0.25rem;
+
+    a,
+    span {
+      border: 3px solid transparent;
+      text-decoration: none;
+      color: var(--font-color);
+      line-height: 42px;
+      min-width: 48px;
+      padding: 0 0.25rem;
+      display: grid;
+      place-items: center;
+      transition: background-color 0.2s ease-in;
+    }
+
+    a:hover,
+    a:focus {
+      background-color: var(--light-gray);
+    }
+
+    .next,
+    .prev {
+      text-transform: uppercase;
+      position: absolute;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev {
+      left: 0;
+    }
+  }
+
+
+  .current {
+    border: 3px solid #000;
+    position: relative;
+
+    &::after,
+    &::before {
+      position: absolute;
+      left: 6px;
+      right: 6px;
+      content: '';
+      background-color: var(--body-background-color);
+      height: 3px;
+    }
+
+    &::after {
+      top: -3px;
+    }
+
+    &::before {
+      bottom: -3px;
+    }
+
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--feature-section-background-color);
+  color: #fff;
+  padding: 0.5rem;
+
+  @include res(tab) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.social {
+  display: flex;
+  list-style: none;
 }
