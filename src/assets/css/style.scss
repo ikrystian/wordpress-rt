@@ -520,8 +520,16 @@ body {
     text-transform: uppercase;
     color: #757575;
     font-weight: 900;
+    transition: color 0.2s ease-in-out;
+
+    &:hover, &:focus {
+      color: #fff;
+    }
 
     .material-icons {
+      @include size(18px);
+      position: relative;
+      top: 1px;
       margin-right: 0.5em;
     }
   }
@@ -588,9 +596,39 @@ body {
 }
 
 .post {
+  position: relative;
+
+  &--disabled,
+  &:nth-child(2) {
+
+   > div {
+     opacity: 0.25;
+   }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      padding: 1rem 1.5rem;
+      font-size: 1.5em;
+      font-weight: 900;
+      color: var(--font-color);
+      z-index: 1;
+      background-color: #fff;
+      display: inline-block;
+      content: 'Brak miejsc';
+    }
+  }
+
   &__thumbnail {
     a {
-      display: block;
+      display: flex;
+      clip-path: polygon(1rem 1rem, calc(100% - 1rem) 1rem, calc(100% - 1rem) calc(100% - 1rem), 1rem calc(100% - 1rem));
+      transition: clip-path 0.2s ease-in;
+      &:hover,
+      &:focus {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
 
       img {
         object-fit: cover;
@@ -598,6 +636,10 @@ body {
         height: auto;
       }
     }
+  }
+
+  &__content {
+    padding: 0 1rem 1rem 1rem;
   }
 
   &__title {
