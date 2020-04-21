@@ -184,7 +184,7 @@ body {
   bottom: 0;
   right: 0;
   background-color: var(--body-background-color);
-  z-index: 1;
+  z-index: 10001;
   overflow: hidden;
 
   &--opened {
@@ -490,6 +490,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    padding: 0 1rem;
   }
 }
 
@@ -825,4 +826,35 @@ ul.page-numbers {
 
 .post-info {
   display: none;
+}
+
+.sub-menu {
+  margin-bottom: 1rem;
+  ul {
+    display: flex;
+    list-style: none;
+    li {
+     margin: 0 1rem;
+    }
+    a {
+      display: flex;
+      padding: 1rem 0;
+      font-size: 2em;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--light-gray);
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease-in;
+
+      &:hover,
+      &:focus {
+        color: var(--font-color);
+      }
+
+      &.active {
+        border-bottom-color: var(--font-color);
+        color: var(--font-color);
+      }
+    }
+  }
 }
