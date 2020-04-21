@@ -1,7 +1,14 @@
 <div class="post <?php if ( has_post_thumbnail() ) { ?>has-thumbnail <?php } ?>" data-aos="fade-up">
 	<!-- post-thumbnail -->
 	<div class="post__thumbnail">
-		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
+		<a href="<?php the_permalink(); ?>">
+            <ul class="post__icons">
+                <li>Wystawa</li>
+                <li><span class="material-icons">wb_iridescent</span></li>
+                <li><span class="material-icons">translate</span></li>
+            </ul>
+            <?php the_post_thumbnail( 'medium' ); ?>
+        </a>
 	</div>
 	<!-- /post-thumbnail -->
 
