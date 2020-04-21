@@ -497,6 +497,11 @@ body {
   background-color: var(--feature-section-background-color);
   padding: 3rem 1rem;
   margin-bottom: 2rem;
+  display: none;
+
+  &--opened {
+    display: block;
+  }
 }
 
 .filters-form {

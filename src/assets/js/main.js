@@ -25,6 +25,10 @@ $( window ).on( 'load', function() {
 		menuLinks.removeClass( 'not-active' );
 	} );
 
+	$('.filters-button').on('click', function() {
+		$('.filters').slideToggle();
+	});
+
 	$( '#clear-filters' ).on( 'click', function() {
 		$( 'select' ).selectric( 'refresh' );
 	} );
