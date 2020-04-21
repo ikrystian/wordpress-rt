@@ -450,6 +450,7 @@ body {
 .page-template,
 .page {
   padding-top: var(--header-height);
+  min-height: calc(100vh - 38px);
 }
 
 .site-content,
@@ -659,7 +660,7 @@ body {
     font-size: 2em;
     font-weight: 900;
     line-height: 100%;
-
+    margin-bottom: 0.5rem;
     a {
       text-decoration: none;
       color: var(--font-color);
@@ -815,4 +816,8 @@ ul.page-numbers {
 .social {
   display: flex;
   list-style: none;
+}
+
+.post-info {
+  display: none;
 }

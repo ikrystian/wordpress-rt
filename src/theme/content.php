@@ -17,25 +17,16 @@
 		<h2 class="post__title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h2>
-        <p class="post__meta">
-            Data wystawy | Miejsce
-        </p>
-		<p class="post-info">
-			<?php echo get_the_excerpt(); ?>
-			<?php
-			$categories = get_the_category();
-			$separator  = ', ';
-			$output     = '';
-
-			if ( $categories ) : ?>
-				<div class="tags">
-					<?php foreach ( $categories as $category )
-						{ $output .= '<a href="' . get_category_link( $category->term_id ) . '">' . $category->cat_name . '</a>' . $separator; }
-						echo trim( $output, $separator );
-					?>
-				</div>
-			<?php endif; ?>
-		</p>
+        <ul class="slider__meta">
+            <li>
+                <span class="material-icons">calendar_today</span>
+                <span>06.12.2019 - 05.01.2020</span>
+            </li>
+            <li>
+                <span class="material-icons">location_on</span>
+                <span>Galeria XXX</span>
+            </li>
+        </ul>
 
 		<?php if ( is_search() or is_archive() ) : ?>
 			<p class="excerpt content">
