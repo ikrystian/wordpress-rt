@@ -11,7 +11,7 @@
 <body <?php body_class(); ?>>
 <header id="header" class="header">
     <div class="header__section header__section--right">
-        <h1>Logo</h1>
+        <h1><a href="/">Logo</a></h1>
     </div>
     <div class="header__section header__section--right">
 
@@ -102,41 +102,6 @@
     </button>
 </div>
 
-<section class="slider">
-    <div class="slider__content">
-        <article>
-            <ul class="slider__meta">
-                <li>
-                    <span class="material-icons">calendar_today</span>
-                    <span>06.12.2019 - 05.01.2020</span>
-                </li>
-                <li>
-                    <span class="material-icons">location_on</span>
-                    <span>Galeria XXX</span>
-                </li>
-            </ul>
-            <h2 class="slider__title">
-                <a href="#" class="slider__title-link">Mikołaj Smoczyński - Thema Secret</a>
-                <a href="#" class="category-button">wystawa</a>
-            </h2>
-            <p class="slider__paragraph">
-                Mikołaj Smoczyński to jeden z najwybitniejszych artystów lubelskich drugiej połowy XX wieku, przez wiele
-                lat związany z Galerią Labirynt. Znany był z fotografii kreacyjnych będących efektem działań
-                performatywnych realizowanych w pracowni, przed kamerą fotograficzną
-            </p>
-        </article>
-    </div>
-    <div class="slider__image">
-        <img src="<?php bloginfo('template_url'); ?>/img/slider.jpg" alt="slider sampke image">
-    </div>
-</section>
 
-<section class="section section--today">
-    <h3 class="section__title">Dziś</h3>
-    <span class="section__date">Czwartek</span>
-    <ul class="featured-list">
-        <li>asdasda</li>
-    </ul>
-</section>
 
-<?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
+<?php // edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>

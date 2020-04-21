@@ -1,11 +1,17 @@
 $( window ).on( 'load', function() {
-	$( '#toggle-nav' ).on( 'click', function() {
-		//!todo zmiana tekstu przycisku
-		$( '.nav-container' ).toggleClass( 'nav-container--opened' );
-	} );
+	$( 'select' ).selectric({
+		onRefresh: function() {
+
+		},
+	});
 
 	$( '.opening-hours__button' ).on( 'click', function() {
 		$( '.opening-hours__content' ).toggleClass( 'opening-hours__content--opened' );
+	} );
+
+	$( '#toggle-nav' ).on( 'click', function() {
+		//!todo zmiana tekstu przycisku
+		$( '.nav-container' ).toggleClass( 'nav-container--opened' );
 	} );
 
 	$( '.contrast-button' ).on( 'click', function() {
@@ -17,6 +23,10 @@ $( window ).on( 'load', function() {
 		menuLinks.not( $( this ) ).addClass( 'not-active' );
 	} ).on( 'mouseleave', function() {
 		menuLinks.removeClass( 'not-active' );
+	} );
+
+	$( '#clear-filters' ).on( 'click', function() {
+		$( 'select' ).selectric( 'refresh' );
 	} );
 } );
 
@@ -30,4 +40,3 @@ window.onscroll = function() {
 	}
 	prevScrollpos = currentScrollPos;
 };
-// zrobimy refactor do czystego js
