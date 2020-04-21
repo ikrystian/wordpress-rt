@@ -31,4 +31,3 @@ window.onscroll = function() {
 	prevScrollpos = currentScrollPos;
 };
 // zrobimy refactor do czystego js
-

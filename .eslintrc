@@ -1,19 +1,10 @@
-{
-	"env": {
-		"browser": true,
-		"es6": true,
-		"commonjs": true
-	},
-	"extends": [
-		"plugin:@wordpress/eslint-plugin/esnext",
-		"plugin:@wordpress/eslint-plugin/jsdoc"
-	],
-	"globals": {
-		
-	},
-	"parserOptions": {
-		"ecmaVersion": 6
-	},
-	"rules": {
-	}
-}
+module.exports = {
+  'extends': 'airbnb-base',
+  'env': {
+    'browser': true,
+    'node': true
+  },
+  rules: {
+    'no-console': 'off'
+  }
+};
