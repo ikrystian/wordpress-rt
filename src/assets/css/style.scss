@@ -353,6 +353,7 @@ body {
   @include res(tab) {
     flex-direction: row;
     height: 50vh;
+    min-height: 400px;
   }
 
   &__content,

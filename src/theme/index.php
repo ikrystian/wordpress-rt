@@ -97,6 +97,4 @@
     </div>
 </article>
 <!-- /site-content -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
