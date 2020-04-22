@@ -1109,6 +1109,19 @@ ul.page-numbers {
   &__thumbnail {
     height: 50vh;
     min-height: 300px;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 2rem;
+      background-color: var(--body-background-color);
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      position: absolute;
+    }
 
     img {
       object-fit: cover;
@@ -1133,8 +1146,10 @@ ul.page-numbers {
 
   &__info {
     background-color: var(--body-background-color);
-    padding: 1rem;
-    transform: translateY(-2rem);
+    padding: 3rem 1rem 1rem 0;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 2;
   }
 
   &__sidebar {
