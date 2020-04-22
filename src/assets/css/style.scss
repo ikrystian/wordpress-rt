@@ -36,6 +36,10 @@ body {
   color: var(--font-color);
   overflow-x: hidden;
 
+  &.disabled {
+    overflow-y: hidden;
+  }
+
   &.dark-theme {
     --body-background-color: #252525;
     --font-color: #fff;
@@ -110,14 +114,19 @@ body {
   height: var(--header-height);
   background-color: var(--body-background-color);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
   z-index: 2;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   transition: top 0.2s ease-in-out;
+
+  @include res(desktop) {
+    flex-direction: row;
+  }
 
   &__section {
     flex: 50%;
@@ -455,7 +464,7 @@ body {
     padding-left: 1rem;
     font-weight: 900;
     position: relative;
-
+    overflow: hidden;
     &::after {
       height: 1px;
       background-color: #dedede;
@@ -480,6 +489,7 @@ body {
 
   &__footer {
     display: flex;
+    padding: 0 1rem;
 
     button {
       padding: 1rem;
@@ -964,7 +974,7 @@ ul.page-numbers {
   margin-bottom: 2rem;
 
   @include res(desktop) {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 
   .side-column {

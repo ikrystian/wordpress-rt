@@ -24,6 +24,7 @@ $( window ).on( 'load', function() {
 
 	$( '#toggle-nav' ).on( 'click', function() {
 		//!todo zmiana tekstu przycisku
+		$('body').toggleClass('disabled');
 		$( '.nav-container' ).toggleClass( 'nav-container--opened' );
 	} );
 
