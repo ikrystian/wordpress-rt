@@ -1,3 +1,6 @@
+<div class="bottom-navs container">
+    <?php echo get_sidebar(); ?>
+</div>
 <footer class="footer">
 
     <p>

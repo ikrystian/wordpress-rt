@@ -82,9 +82,26 @@ get_header();
 
         <div class="section__posts">
             <div class="post">
-                <div class="post__thumbnail">
-                    <div class="post__icons">
-                        <li>Nieczynne</li>
+                <div class="post__thumbnail post__thumbnail--disabled">
+                    <ul class="post__icons">
+                        <li class="closed">Nieczynne</li>
+                    </ul>
+                    <div class="post__thumbnail-content">
+                        <h2>Galeria XXX</h2>
+                        <!-- change slider meta class to global val -->
+                        <ul class="slider__meta">
+                            <li>
+                                <span class="material-icons">location_on</span>
+                                <span>Galeria XXX</span>
+                            </li>
+                        </ul>
+                        <h2>Galeria xxx</h2>
+                        <ul class="slider__meta">
+                            <li>
+                                <span class="material-icons">location_on</span>
+                                <span>Galeria XXX</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -123,7 +140,10 @@ get_header();
             endwhile;
             wp_reset_query();
             ?>
-        </div> <!-- end of owl carousel posts-->
+        </div>
+        <div class="section__footer">
+            <button class="action-button"><span>Wczytaj kolejne</span></button>
+        </div>
     </div>
 </section>
 <?php

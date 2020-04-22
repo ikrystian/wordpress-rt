@@ -61,7 +61,9 @@ function register_my_menus()
     register_nav_menus(
         array(
             'main-menu' => __('Main'),
-            'secondary-menu' => __('Secondary menu')
+            'secondary-menu' => __('Secondary menu'),
+            'footer-menu-1' => __('Footer  menu'),
+            'footer-menu-2' => __('Footer  menu 2')
         )
     );
 }
