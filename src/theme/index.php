@@ -70,7 +70,7 @@
 
     <div class="sub-menu">
         <nav class="container">
-            <ul>
+            <ul class="tabs">
                 <li><a href="#" class="active">Bieżące</a></li>
                 <li><a href="#">Nadchodzące</a></li>
                 <li><a href="#">Archiwalne</a></li>

@@ -518,7 +518,6 @@ body {
   min-height: calc(100vh - 38px);
 }
 
-.site-content,
 .container {
   width: 1170px;
   max-width: 100%;
@@ -933,7 +932,18 @@ ul.page-numbers {
 .sub-menu {
   margin-bottom: 1rem;
 
-  ul {
+  &--single {
+    margin-bottom: 0;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  .tabs {
     display: flex;
     list-style: none;
 
@@ -1064,5 +1074,57 @@ ul.page-numbers {
     margin-right: 0.5rem;
     color: var(--light-gray);
     font-size: 1em;
+  }
+}
+
+.single {
+  margin: var(--header-height) auto 0;
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__thumbnail {
+    height: 50vh;
+    min-height: 300px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
+
+.post-social {
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  &--single {
+    transform: translateY(9px);
+  }
+
+  &__icon,
+  &__title {
+    position: relative;
+    margin-left: 0.5rem;
+  }
+
+  &__title {
+    top: -4px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+      filter: grayscale(0);
+      transform: scale(1.1);
+    }
   }
 }
