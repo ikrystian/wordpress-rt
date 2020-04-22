@@ -32,6 +32,10 @@ $( window ).on( 'load', function() {
 		$( 'body' ).toggleClass( 'dark-theme' );
 	} );
 
+	$( '#back' ).on( 'click', function() {
+		window.history.back();
+	} );
+
 	const menuLinks = $( '.nav-container__menus .menu a' );
 	$( menuLinks ).on( 'mouseenter', function() {
 		menuLinks.not( $( this ) ).addClass( 'not-active' );

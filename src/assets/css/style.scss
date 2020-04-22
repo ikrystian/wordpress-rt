@@ -663,9 +663,11 @@ body {
 }
 
 .posts-list {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  @include res(desktop) {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .post {
@@ -1037,5 +1039,30 @@ ul.page-numbers {
   img {
     width: auto;
     max-height: 42px;
+  }
+}
+
+.back-button {
+  border: 0;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    .back-button__text {
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    position: relative;
+  }
+
+  .material-icons {
+    margin-right: 0.5rem;
+    color: var(--light-gray);
+    font-size: 1em;
   }
 }

@@ -1,4 +1,8 @@
 <article class="single">
+    <button id="back" class="back-button">
+        <span class="material-icons">arrow_back</span>
+        <span class="back-button__text">Wróć</span>
+    </button>
 	<h1 class="single-title"><?php the_title(); ?></h1>
 
 	<?php if (!is_single()) : ?>
