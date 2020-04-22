@@ -52,6 +52,17 @@ function wordpressify_widgets()
             'after_title' => '</h2>',
         )
     );
+
+    register_sidebar(
+        array(
+            'name' => 'Single sidebar',
+            'id' => 'sidebar2',
+            'before_widget' => '<div class="widget-item">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        )
+    );
 }
 
 add_action('widgets_init', 'wordpressify_widgets');

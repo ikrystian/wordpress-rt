@@ -1,5 +1,5 @@
 <div class="bottom-navs container">
-    <?php echo get_sidebar(); ?>
+    <?php dynamic_sidebar('sidebar1'); ?>
 </div>
 <footer class="footer">
 
