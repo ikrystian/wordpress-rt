@@ -108,7 +108,8 @@
                     ?>
                 </div>
 
-                <div class="single__sidebar">
+                <div class="single__sidebar sidebar">
+                    <h2 class="sidebar__title"><?= __('Formularz kontaktowy'); ?></h2>
                     <?= do_shortcode('[contact-form-7 id="68" title="Contact form 1"]'); ?>
 
                 </div>

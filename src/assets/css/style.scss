@@ -8,14 +8,17 @@
   --body-background-color: #fff;
   --font-color: #252525;
   --header-height: 108px;
-
+  --warn-color: #C92F33;
   --light-gray: #E0E0E0;
   --category-border-color: #eeeeee;
   --feature-section-background-color: #252525;
   --feature-section-color: #fff;
 
   --breadcrumbs-link-color: #9E9E9E;
-  --form-borders-color: #252525;
+  --form-borders-color: #B0B0B0;
+  --form-borders-active-color: #252525;
+  --font-family: 'Darker Grotesque', sans-serif;
+  --success-color: #039500;
 }
 
 * {
@@ -27,12 +30,16 @@
 
 button {
   cursor: pointer;
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: var(--font-family);
   color: var(--font-color);
 }
 
+input, textarea {
+  font-family: var(--font-family);
+}
+
 body {
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--body-background-color);
   color: var(--font-color);
   overflow-x: hidden;
@@ -1133,8 +1140,13 @@ ul.page-numbers {
   &__sidebar {
     width: 100%;
 
-    @include res(phone) {
+    @include res(tab) {
       max-width: 255px;
+      margin: auto;
+    }
+
+    @include res(desktop) {
+      margin: unset;
     }
   }
 
@@ -1183,7 +1195,7 @@ ul.page-numbers {
     background-color: var(--body-background-color);
     position: absolute;
     left: 0.5rem;
-    top: 8px;
+    top: -12px;
     z-index: 1;
     font-weight: 800;
   }
@@ -1192,20 +1204,93 @@ ul.page-numbers {
     position: relative;
     margin-bottom: 1rem;
 
+    &:last-of-type {
+      margin-top: 0;
+    }
   }
 
   .wpcf7-form-control {
     display: block;
     width: 100%;
     border: 1px solid var(--form-borders-color);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+
+    &:focus {
+      border-color: var(--form-borders-active-color);
+    }
 
     &.wpcf7-not-valid {
       border-color: red;
     }
   }
+
   span.wpcf7-not-valid-tip {
     display: block;
-    margin-bottom: -1rem;
+  }
+
+  .ajax-loader {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+  }
+
+  .wpcf7-submit {
+    background-color: var(--font-color);
+    border: 3px solid var(--font-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+
+    span {
+      z-index: 2;
+      position: relative;
+    }
+
+    &::before {
+      display: none;
+      width: 48px;
+      position: absolute;
+      content: '';
+      top: -3px;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--body-background-color);
+      z-index: 1;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--body-background-color);
+      color: var(--font-color);
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+
+  div.wpcf7-response-output {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  div.wpcf7-validation-errors {
+    color: var(--warn-color);
+  }
+}
+
+.sidebar {
+  padding-top: 3rem;
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: 900;
   }
 }
