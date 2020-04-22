@@ -10,7 +10,8 @@
 
 <body <?php body_class(); ?>>
 <header id="header" class="header">
-    <div class="header__section header__section--right">
+    <div class="container header__container">
+    <div class="header__section header__section--left">
         <h1><a href="/">Logo</a></h1>
     </div>
     <div class="header__section header__section--right">
@@ -37,6 +38,7 @@
             menu
             <span aria-hidden="true"></span>
         </button>
+    </div>
     </div>
 </header>
 

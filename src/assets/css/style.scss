@@ -87,7 +87,7 @@ body {
     letter-spacing: 0.05em;
 
     &::before {
-      display: none;
+      opacity: 0;
     }
   }
 
@@ -107,6 +107,7 @@ body {
     transform: translateX(-50%);
     background-color: var(--body-background-color);
     display: block;
+    transition: opacity 0.2s ease-in-out;
   }
 }
 
@@ -114,9 +115,7 @@ body {
   height: var(--header-height);
   background-color: var(--body-background-color);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 0 1rem;
   z-index: 2;
   position: fixed;
@@ -124,9 +123,17 @@ body {
   width: 100vw;
   transition: top 0.2s ease-in-out;
 
-  @include res(desktop) {
-    flex-direction: row;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @include res(desktop) {
+      flex-direction: row;
+    }
   }
+
 
   &__section {
     flex: 50%;
@@ -221,7 +228,6 @@ body {
 
   .menu-main-container {
     width: 445px;
-    margin: auto;
   }
 
   .menu {
@@ -346,8 +352,7 @@ body {
 
   @include res(tab) {
     flex-direction: row;
-    min-height: calc(100vh - var(--header-height));
-
+    height: 50vh;
   }
 
   &__content,
@@ -449,6 +454,7 @@ body {
 .section {
   padding: 2rem;
   position: relative;
+  overflow-x: hidden;
 
   &--today {
     color: var(--feature-section-color);
@@ -465,6 +471,7 @@ body {
     font-weight: 900;
     position: relative;
     overflow: hidden;
+
     &::after {
       height: 1px;
       background-color: #dedede;
@@ -1016,6 +1023,7 @@ ul.page-numbers {
   height: 100%;
   align-items: flex-end;
   justify-content: space-between;
+
   li:not(:first-of-type) {
     margin-left: 1rem;
   }

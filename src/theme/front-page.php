@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<section class="slider" style="display: none;">
+<section class="slider">
     <div class="slider__content">
         <article>
             <ul class="slider__meta">
