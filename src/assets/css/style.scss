@@ -81,6 +81,45 @@ body {
     text-decoration: none;
   }
 }
+// !todo to refactoring
+.secondary-button {
+  background-color: var(--font-color);
+  border: 3px solid var(--font-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+
+  span {
+    z-index: 2;
+    position: relative;
+  }
+
+  &::before {
+    display: none;
+    width: 48px;
+    position: absolute;
+    content: '';
+    top: -3px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--body-background-color);
+    z-index: 1;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--body-background-color);
+    color: var(--font-color);
+
+    &::before {
+      display: block;
+    }
+  }
+}
 
 .filters-button,
 .action-button {
@@ -1244,6 +1283,11 @@ ul.page-numbers {
     display: block;
   }
 
+  .wpcf7-form-control {
+    border: 3px solid var(--font-color);
+    padding: 0.75rem 1rem;
+  }
+
   .ajax-loader {
     position: absolute;
     top: 50%;
@@ -1251,47 +1295,9 @@ ul.page-numbers {
     right: 1rem;
   }
 
-  .wpcf7-submit {
-    background-color: var(--font-color);
-    border: 3px solid var(--font-color);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    cursor: pointer;
-    position: relative;
-
-    span {
-      z-index: 2;
-      position: relative;
-    }
-
-    &::before {
-      display: none;
-      width: 48px;
-      position: absolute;
-      content: '';
-      top: -3px;
-      bottom: -3px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--body-background-color);
-      z-index: 1;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: var(--body-background-color);
-      color: var(--font-color);
-
-      &::before {
-        display: block;
-      }
-    }
-  }
 
   div.wpcf7-response-output {
-    margin: 0;
+    margin: -1rem 0 0;
     padding: 0;
     border: none;
   }
