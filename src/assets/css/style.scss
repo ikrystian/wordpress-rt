@@ -1004,3 +1004,24 @@ ul.page-numbers {
     }
   }
 }
+
+.textwidget {
+  height: 100%;
+}
+
+.bottom-partners {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
+  li:not(:first-of-type) {
+    margin-left: 1rem;
+  }
+
+  img {
+    width: auto;
+    max-height: 42px;
+  }
+}
