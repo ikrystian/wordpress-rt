@@ -1,4 +1,3 @@
-<article class="page">
-    <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
+<article class="">
     <?php the_content(); ?>
 </article>

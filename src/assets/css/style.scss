@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap');
-@import "../../../node_modules/selectric/src/selectric";
+@import '../../../node_modules/selectric/src/selectric';
+@import '../../../node_modules/owl.carousel/src/scss/owl.carousel';
+@import '../../../node_modules/owl.carousel/src/scss/owl.theme.default';
 @import './abstracts/mixins';
 
 :root {
@@ -434,16 +436,31 @@ body {
 
 .section {
   padding: 2rem;
-
-  &__title {
-    color: var(--feature-section-color);
-    font-size: 4.5em;
-    font-weight: 900;
-  }
+  position: relative;
 
   &--today {
     color: var(--feature-section-color);
     background-color: var(--feature-section-background-color);
+
+    .section__title {
+      color: var(--feature-section-color);
+    }
+  }
+
+  &__title {
+    font-size: 4.5em;
+    padding-left: 1rem;
+    font-weight: 900;
+  }
+
+  &__date {
+    padding-left: 1rem;
+  }
+
+  &__posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
   }
 }
 
@@ -607,6 +624,13 @@ body {
   position: relative;
   margin-bottom: 1rem;
 
+  &--closed {
+    .post__icons {
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+  }
+
   &--disabled,
   &:nth-child(2) {
 
@@ -667,6 +691,7 @@ body {
     font-weight: 900;
     line-height: 100%;
     margin-bottom: 0.5rem;
+
     a {
       text-decoration: none;
       color: var(--font-color);
@@ -675,6 +700,11 @@ body {
       &:focus {
         text-decoration: underline;
       }
+    }
+
+    &--light a {
+      color: var(--feature-section-color);
+      font-weight: 700;
     }
   }
 
@@ -830,12 +860,15 @@ ul.page-numbers {
 
 .sub-menu {
   margin-bottom: 1rem;
+
   ul {
     display: flex;
     list-style: none;
+
     li {
-     margin: 0 1rem;
+      margin: 0 1rem;
     }
+
     a {
       display: flex;
       padding: 1rem 0;
@@ -855,6 +888,27 @@ ul.page-numbers {
         border-bottom-color: var(--font-color);
         color: var(--font-color);
       }
+    }
+  }
+}
+
+.owl-nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 30%;
+  left: -2rem;
+  right: -2rem;
+
+  // override owl-carousel theme
+  button {
+    font-size: 2em !important;
+    background: transparent !important;
+    outline: none;
+
+    span {
+      display: flex;
+      align-items: center;
     }
   }
 }

@@ -65,7 +65,11 @@ const pluginsListProd = [
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
-const headerJS = ['./node_modules/jquery/dist/jquery.js', './node_modules/selectric/public/jquery.selectric.min.js'];
+const headerJS = [
+	'./node_modules/jquery/dist/jquery.js',
+	'./node_modules/selectric/public/jquery.selectric.min.js',
+	'./node_modules/owl.carousel/dist/owl.carousel.min.js'
+];
 
 const footerJS = ['./src/assets/js/**'];
 

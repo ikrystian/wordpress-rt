@@ -1,8 +1,21 @@
-$( window ).on( 'load', function() {
-	$( 'select' ).selectric({
-		onRefresh: function() {
 
-		},
+$( window ).on( 'load', function() {
+	$( 'select' ).selectric();
+
+	$('.owl-carousel').owlCarousel({
+		loop: true,
+		items: 2,
+		dots: false,
+		nav: true,
+		autoplay: true,
+		responsive: {
+			0: {
+				items: 1
+			},
+			960: {
+				items: 2
+			}
+		}
 	});
 
 	$( '.opening-hours__button' ).on( 'click', function() {
