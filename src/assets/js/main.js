@@ -50,6 +50,11 @@ $( window ).on( 'load', function() {
 	$( '#clear-filters' ).on( 'click', function() {
 		$( 'select' ).selectric( 'refresh' );
 	} );
+
+	$('.fontSize button').on('click', function() {
+		let fontSize = $(this).attr('data-font');
+		$('body').css('font-size', `${fontSize}px`);
+	})
 } );
 
 let prevScrollpos = window.pageYOffset;

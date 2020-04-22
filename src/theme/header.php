@@ -21,10 +21,10 @@
                     <li class="utils__item">
                         <button class="utils__button contrast-button">Kontrast</button>
                     </li>
-                    <li class="utils__item">
-                        <button class="utils__button utils__button contrast-button--active">A</button>
-                        <button class="utils__button">A+</button>
-                        <button class="utils__button">A++</button>
+                    <li class="utils__item fontSize">
+                        <button class="utils__button utils__button contrast-button--active" data-font="16">A</button>
+                        <button class="utils__button" data-font="18">A+</button>
+                        <button class="utils__button" data-font="20">A++</button>
                     </li>
                     <li class="utils__item">
                         <a href="#" class="utils__button utils__button--active">pl</a>
