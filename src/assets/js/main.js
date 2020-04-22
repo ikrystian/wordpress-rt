@@ -58,6 +58,9 @@ $( window ).on( 'load', function() {
 } );
 
 let prevScrollpos = window.pageYOffset;
+let navbar = document.querySelector(".sub-menu");
+let sticky = navbar.offsetTop;
+
 window.onscroll = function() {
 	const currentScrollPos = window.pageYOffset;
 	if (prevScrollpos > currentScrollPos) {
@@ -66,4 +69,14 @@ window.onscroll = function() {
 		document.getElementById( 'header' ).style.top = '-108px';
 	}
 	prevScrollpos = currentScrollPos;
+
+	stickyMenu()
 };
+
+function stickyMenu() {
+	if (window.pageYOffset >= sticky) {
+		navbar.classList.add("sub-menu--sticky")
+	} else {
+		navbar.classList.remove("sub-menu--sticky");
+	}
+}

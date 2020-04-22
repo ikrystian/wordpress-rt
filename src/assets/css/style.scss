@@ -939,6 +939,15 @@ ul.page-numbers {
 .sub-menu {
   margin-bottom: 1rem;
 
+  &--sticky {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--body-background-color);
+  }
+
   &--single {
     margin-bottom: 0;
 
