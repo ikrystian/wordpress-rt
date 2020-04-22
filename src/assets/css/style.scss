@@ -214,15 +214,20 @@ body {
 
   &__menus {
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100%;
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    @include res(desktop) {
-      flex-direction: row;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+
+      @include res(desktop) {
+        flex-direction: row;
+      }
     }
   }
 

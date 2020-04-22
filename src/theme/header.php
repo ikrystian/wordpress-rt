@@ -11,43 +11,45 @@
 <body <?php body_class(); ?>>
 <header id="header" class="header">
     <div class="container header__container">
-    <div class="header__section header__section--left">
-        <h1><a href="/">Logo</a></h1>
-    </div>
-    <div class="header__section header__section--right">
+        <div class="header__section header__section--left">
+            <h1><a href="/">Logo</a></h1>
+        </div>
+        <div class="header__section header__section--right">
 
-        <nav>
-            <ul class="utils">
-                <li class="utils__item">
-                    <button class="utils__button contrast-button">Kontrast</button>
-                </li>
-                <li class="utils__item">
-                    <button class="utils__button utils__button contrast-button--active">A</button>
-                    <button class="utils__button">A+</button>
-                    <button class="utils__button">A++</button>
-                </li>
-                <li class="utils__item">
-                    <a href="#" class="utils__button utils__button--active">pl</a>
-                    <a href="#" class="utils__button">en</a>
-                    <a href="#" class="utils__button">ua</a>
-                </li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="utils">
+                    <li class="utils__item">
+                        <button class="utils__button contrast-button">Kontrast</button>
+                    </li>
+                    <li class="utils__item">
+                        <button class="utils__button utils__button contrast-button--active">A</button>
+                        <button class="utils__button">A+</button>
+                        <button class="utils__button">A++</button>
+                    </li>
+                    <li class="utils__item">
+                        <a href="#" class="utils__button utils__button--active">pl</a>
+                        <a href="#" class="utils__button">en</a>
+                        <a href="#" class="utils__button">ua</a>
+                    </li>
+                </ul>
+            </nav>
 
-        <button id="toggle-nav" class="toggle-nav-button">
-            menu
-            <span aria-hidden="true"></span>
-        </button>
-    </div>
+            <button id="toggle-nav" class="toggle-nav-button">
+                menu
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
     </div>
 </header>
 
 <div class="nav-container">
     <div class="nav-container__menus">
-        <?php
-        wp_nav_menu(array('theme_location' => 'main-menu'));
-        wp_nav_menu(array('theme_location' => 'secondary-menu'));
-        ?>
+        <div>
+            <?php
+            wp_nav_menu(array('theme_location' => 'main-menu'));
+            wp_nav_menu(array('theme_location' => 'secondary-menu'));
+            ?>
+        </div>
     </div>
 </div>
 <div class="opening-hours">
@@ -103,7 +105,6 @@
         <span class="opening-hours__text">godziny otwarcia</span>
     </button>
 </div>
-
 
 
 <?php // edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
