@@ -1246,6 +1246,8 @@ ul.page-numbers {
 
     @include res(desktop) {
       margin: unset;
+      width: 255px;
+      min-width: 255px;
     }
   }
 
@@ -1366,7 +1368,7 @@ ul.page-numbers {
 
   &__button {
     display: flex;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 100%;
     justify-content: center;
   }
@@ -1374,5 +1376,32 @@ ul.page-numbers {
   iframe {
     display: none;
     max-width: 100%;
+  }
+}
+
+
+.c-accordion {
+
+  &__title {
+    font-size: 1.25em;
+  }
+
+  &__item {
+    padding: 1rem 1rem 1rem 0;
+    position: relative;
+    background-color: #FAFAFA;
+    margin-bottom: 1rem;
+
+    &::before {
+      content: '';
+      display: block;
+      background-color: #FAFAFA;
+      position: absolute;
+      width: 100vw;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+    }
   }
 }
