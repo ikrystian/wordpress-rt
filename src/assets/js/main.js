@@ -62,6 +62,12 @@ $( window ).on( 'load', function() {
 		let fontSize = $(this).attr('data-font');
 		$('body').css('font-size', `${fontSize}px`);
 	})
+
+	$('.tabs a').on('click', function(e) {
+		e.preventDefault();
+		$('.tabs a').removeClass('active');
+		$(this).addClass('active');
+	})
 } );
 
 let prevScrollpos = window.pageYOffset;
