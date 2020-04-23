@@ -96,7 +96,35 @@
         <div class="single__content">
             <div class="container">
                 <div class="single__info">
-                    <h3 class="single__content-title"><?= __('Info o wydarzeniu'); ?></h3>
+                    <ul class="single__meta event-meta">
+                        <li>
+                            <h3 class="event-meta__title"><?= the_field('start_date'); ?> - <?= the_field('end_date'); ?> </h3>
+                            <p class="event-meta__start-end">
+                                <span><?= __('Rozpoczęcie'); ?>: <?= the_field('start_hour'); ?> </span>
+                                <span><?= __('Zakońćzenie'); ?>: <?= the_field('end_hour'); ?> </span>
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Galeria XXX</h3>
+                            <p><?= __('Zobacz na mapie'); ?></p>
+                        </li>
+                        <li>
+                            <h3><span class="material-icons">local_activity</span><?= __('Cennik'); ?></h3>
+                            <?= the_field('price'); ?>
+                        </li>
+                        <li>
+                            <h3><span class="material-icons">translate</span>Język</h3>
+                            <?= the_field('language'); ?>
+                        </li>
+                        <li>
+                            <h3><span class="material-icons">group</span>Kuratorz</h3>
+                            <?= the_field('curators'); ?>
+                        </li>
+                        <li>
+                            <h3><span class="material-icons">hearing</span>Audiodeskrypcja</h3>
+                            <?= the_field('audiodescription'); ?>
+                        </li>
+                    </ul>
 
                     <?php the_content(); ?>
 
