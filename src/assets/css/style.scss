@@ -1631,6 +1631,17 @@ ul.page-numbers {
     height: 35vh;
     overflow: hidden;
     margin-bottom: 2rem;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 15%;
+      height: 2rem;
+      background-color: var(--body-background-color);
+      content: '';
+    }
 
     img {
       object-fit: cover;
