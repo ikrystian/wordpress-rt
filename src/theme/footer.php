@@ -14,7 +14,7 @@
         <li>vimeo</li>
     </ul>
     <p>
-        Realizacja <a href="#">Lorem</a>
+        <?= __('Realizacja'); ?> <a href="#">Lorem</a>
     </p>
 
 </footer>

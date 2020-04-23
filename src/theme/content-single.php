@@ -38,7 +38,7 @@
         </p>
 
     <?php endif; ?>
-    <div class="sub-menu sub-menu--single">
+    <div class="sub-menu sub-menu--single" id="sub-menu">
         <nav class="container">
             <ul class="tabs">
                 <li><a href="#" class="active"><?= __('O wystawie'); ?></a></li>
@@ -134,12 +134,12 @@
                         // comments_template();
                     endif;
                     ?>
+
                 </div>
 
                 <div class="single__sidebar sidebar">
                     <h2 class="sidebar__title"><?= __('Formularz kontaktowy'); ?></h2>
                     <?= do_shortcode('[contact-form-7 id="68" title="Contact form 1"]'); ?>
-
                 </div>
             </div>
         </div>

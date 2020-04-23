@@ -69,28 +69,29 @@ $( window ).on( 'load', function() {
 		$( this ).addClass( 'active' );
 	} );
 
-	VANTA.BIRDS({
-		el: "#slider-image",
-		mouseControls: true,
-		touchControls: true,
-		minHeight: 200.00,
-		minWidth: 200.00,
-		scale: 1.00,
-		scaleMobile: 1.00,
-		color1: 0xffffff,
-		color2: 0xfff000,
-		colorMode: "lerp",
-		backgroundAlpha: 0.00
-	})
+	let sliderImage = document.getElementById( 'slider-image' );
+	if (sliderImage) {
+		VANTA.BIRDS( {
+			el: '#slider-image',
+			mouseControls: true,
+			touchControls: true,
+			minHeight: 200.00,
+			minWidth: 200.00,
+			scale: 1.00,
+			scaleMobile: 1.00,
+			color1: 0xffffff,
+			color2: 0xfff000,
+			colorMode: 'lerp',
+			backgroundAlpha: 0.00,
+		} );
+	}
 } );
 
 let prevScrollpos = window.pageYOffset;
-let navbar = document.querySelector( '.sub-menu' );
-
+let navbar = document.getElementById( 'sub-menu' );
 if (navbar) {
-	let sticky = navbar.offsetTop;
+	var sticky = navbar.offsetTop;
 }
-
 window.onscroll = function() {
 	const currentScrollPos = window.pageYOffset;
 	if (prevScrollpos > currentScrollPos) {
@@ -105,7 +106,6 @@ window.onscroll = function() {
 };
 
 function stickyMenu() {
-
 	if (window.pageYOffset >= sticky) {
 		navbar.classList.add( 'sub-menu--sticky' );
 	} else {

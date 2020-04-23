@@ -2,7 +2,7 @@
 /* Template Name: Simple page */
 get_header(); ?>
     <div class="simple-page">
-        <div class="sub-menu">
+        <div class="sub-menu" id="sub-menu">
             <nav class="container">
                 <ul class="tabs">
                     <li><a href="#">O nas</a></li>

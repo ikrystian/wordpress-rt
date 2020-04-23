@@ -32,59 +32,24 @@ get_header();
 
 <section class="section section--today" id="today">
     <div class="container">
-        <h3 class="section__title">Dziś</h3>
-        <span class="section__date">Czwartek</span>
+        <h3 class="section__title"><?= __('Dziś'); ?></h3>
+        <span class="section__date"><?= __('Czwartek'); ?></span>
 
-        <div class="owl-carousel owl-theme">
-            <?php
-            query_posts(array('post_type' => 'post'));
-            while (have_posts()) : the_post();
-                ?>
-                <div class="post">
-                    <div class="post__thumbnail">
-                        <a href="<?php the_permalink(); ?>">
-                            <ul class="post__icons">
-                                <li>Wystawa</li>
-                                <li><span class="material-icons">wb_iridescent</span></li>
-                                <li><span class="material-icons">translate</span></li>
-                            </ul>
-                            <?php the_post_thumbnail('medium'); ?>
-                        </a>
-                    </div>
-                    <div class="post__content">
-                        <h2 class="post__title post__title--light">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h2>
-                        <ul class="slider__meta">
-                            <li>
-                                <span class="material-icons">calendar_today</span>
-                                <span>06.12.2019 - 05.01.2020</span>
-                            </li>
-                            <li>
-                                <span class="material-icons">location_on</span>
-                                <span>Galeria XXX</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            <?php
-            endwhile;
-            wp_reset_query();
-            ?>
-        </div> <!-- end of owl carousel posts-->
+        <?php get_template_part('content', 'slider'); ?>
+
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <h3 class="section__title">Jutro</h3>
-        <span class="section__date">Piątek</span>
+        <h3 class="section__title"><?= __('Jutro'); ?></h3>
+        <span class="section__date"><?= __('Piątek'); ?></span>
 
         <div class="section__posts">
             <div class="post">
                 <div class="post__thumbnail post__thumbnail--disabled">
                     <ul class="post__icons">
-                        <li class="closed">Nieczynne</li>
+                        <li class="closed"><?= __('Nieczynne'); ?></li>
                     </ul>
                     <div class="post__thumbnail-content">
                         <h2>Galeria XXX</h2>
@@ -113,7 +78,7 @@ get_header();
                     <div class="post__thumbnail">
                         <a href="<?php the_permalink(); ?>">
                             <ul class="post__icons">
-                                <li>Wystawa</li>
+                                <li><?= __('Wystawa'); ?></li>
                                 <li><span class="material-icons">wb_iridescent</span></li>
                                 <li><span class="material-icons">translate</span></li>
                             </ul>
@@ -127,7 +92,7 @@ get_header();
                         <ul class="slider__meta">
                             <li>
                                 <span class="material-icons">calendar_today</span>
-                                <span>06.12.2019 - 05.01.2020</span>
+                                <span><?= the_field('start_date'); ?> - <?= the_field('end_date'); ?></span>
                             </li>
                             <li>
                                 <span class="material-icons">location_on</span>

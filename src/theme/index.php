@@ -3,47 +3,48 @@
 <article class="page">
     <div class="container">
         <header class="single-page__header">
-            <h1 class="single-page__title">Wystawy</h1>
+            <h1 class="single-page__title"><?= __('Wystawy'); ?></h1>
             <div class="single-page__header-actions">
                 <button class="filters-button">
-                    <span>pokaż filtry</span>
+                    <span><?= __('Pokaż filtry'); ?></span>
                 </button>
             </div>
         </header>
     </div>
 
 
-    <aside class="filters" style="display: block;">
+    <aside class="filters">
         <div class="container">
-            <form action="" class="filters-form">
+            <form method="get"  class="filters-form">
+                <input type="hidden" name="page_id" value="38">
+                <input type="hidden" name="filter" value="true">
                 <div class="filters-form__fields">
                     <div class="filters-form__group">
-                        <label for="for-who">Dla kogo</label>
+                        <label for="for-who"><?= __('Dla kogo'); ?></label>
                         <select name="for-who" id="for-who">
-                            <option value="">Wszyscy</option>
-                            <option value="">Dzieci</option>
-                            <option value="">Dorośli</option>
+                            <option value="all"><?= __('Wszyscy'); ?></option>
+                            <option value="children"><?= __('Dzieci'); ?></option>
+                            <option value="adult"><?= __('Dorośli'); ?></option>
                         </select>
                     </div>
                     <div class="filters-form__group">
-                        <label for="accessibility">Dostępność</label>
+                        <label for="accessibility"><?= __('Dostępność'); ?></label>
                         <select name="accessibility" id="accessibility">
-                            <option value="">Niewidomi</option>
-                            <option value="">Niesłyszący</option>
-                            <option value="">Niedojebani mózgowo</option>
+                            <option value=""><?= __('Niewidomi'); ?></option>
+                            <option value=""><?= __('Niesłyszący'); ?></option>
                         </select>
                     </div>
                     <div class="filters-form__group">
-                        <label for="language">Język</label>
+                        <label for="language"><?= __('Język'); ?></label>
                         <select name="language" id="language">
-                            <option value="">Polski</option>
-                            <option value="">Angielski</option>
-                            <option value="">Ukraiński</option>
-                            <option value="">Inny</option>
+                            <option value=""><?= __('Polski'); ?></option>
+                            <option value=""><?= __('Angielski'); ?></option>
+                            <option value=""><?= __('Ukraiński'); ?></option>
+                            <option value=""><?= __('Inny'); ?></option>
                         </select>
                     </div>
                     <div class="filters-form__group">
-                        <label for="category">Kategoria</label>
+                        <label for="category"><?= __('Kategoria'); ?></label>
                         <?php
                         $args = array(
                             'show_count' => 1,
@@ -56,37 +57,37 @@
                         echo $select; ?>
                     </div>
                     <div class="filters-form__group">
-                        <label for="location">Lokacja</label>
+                        <label for="location"><?= __('Lokacja'); ?></label>
                         <select name="location" id="location">
-                            <option value="">Wszędzie</option>
+                            <option value=""><?= __('Wszędzie'); ?></option>
                             <option value="">Galeria XXX</option>
                             <option value="">Galeria XXX 2</option>
                             <option value="">Galeria XXX 3</option>
-                            <option value="">Inne</option>
+                            <option value=""><?= __('Inne'); ?></option>
                         </select>
                     </div>
                 </div>
                 <div class="filters-form__actions">
                     <button class="filters-form__button" type="reset" id="clear-filters">
                         <span class="material-icons">close</span>
-                        <span>wyczyść</span>
+                        <span><?= __('Wyczyść'); ?></span>
                     </button>
 
                     <button class="filters-form__button" type="submit">
                         <span class="material-icons">filters</span>
-                        <span>Filtruj</span>
+                        <span><?= __('Filtruj'); ?></span>
                     </button>
                 </div>
             </form>
         </div>
     </aside>
 
-    <div class="sub-menu">
+    <div class="sub-menu" id="sub-menu">
         <nav class="container">
             <ul class="tabs">
-                <li><a href="#" class="active">Bieżące</a></li>
-                <li><a href="#">Nadchodzące</a></li>
-                <li><a href="#">Archiwalne</a></li>
+                <li><a href="#" class="active"><?= __('Bieżące'); ?></a></li>
+                <li><a href="#"><?= __('Nadchodzące'); ?></a></li>
+                <li><a href="#"><?= __('Archiwalne'); ?></a></li>
             </ul>
         </nav>
     </div>
