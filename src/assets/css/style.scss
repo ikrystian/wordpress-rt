@@ -1234,6 +1234,12 @@ ul.page-numbers {
     position: relative;
     z-index: 2;
     flex: 1 1 auto;
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
   }
 
   &__sidebar {
@@ -1379,7 +1385,6 @@ ul.page-numbers {
   }
 }
 
-
 .c-accordion {
 
   &__title {
@@ -1391,6 +1396,14 @@ ul.page-numbers {
     position: relative;
     background-color: #FAFAFA;
     margin-bottom: 1rem;
+
+    h2 {
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: translateX(0.5rem);
+      }
+    }
 
     &::before {
       content: '';
