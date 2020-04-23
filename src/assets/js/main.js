@@ -1,8 +1,7 @@
-
 $( window ).on( 'load', function() {
 	$( 'select' ).selectric();
 
-	$('.owl-carousel').owlCarousel({
+	$( '.owl-carousel' ).owlCarousel( {
 		loop: true,
 		items: 2,
 		dots: false,
@@ -10,13 +9,13 @@ $( window ).on( 'load', function() {
 		autoplay: true,
 		responsive: {
 			0: {
-				items: 1
+				items: 1,
 			},
 			960: {
-				items: 2
-			}
-		}
-	});
+				items: 2,
+			},
+		},
+	} );
 
 	$( '.opening-hours__button' ).on( 'click', function() {
 		$( '.opening-hours__content' ).toggleClass( 'opening-hours__content--opened' );
@@ -24,7 +23,7 @@ $( window ).on( 'load', function() {
 
 	$( '#toggle-nav' ).on( 'click', function() {
 		//!todo zmiana tekstu przycisku
-		$('body').toggleClass('disabled');
+		$( 'body' ).toggleClass( 'disabled' );
 		$( '.nav-container' ).toggleClass( 'nav-container--opened' );
 	} );
 
@@ -43,27 +42,33 @@ $( window ).on( 'load', function() {
 		menuLinks.removeClass( 'not-active' );
 	} );
 
-	$('.filters-button').on('click', function() {
-		$('.filters').slideToggle();
-	});
+	$( '.filters-button' ).on( 'click', function() {
+		$( '.filters' ).slideToggle();
+	} );
 
 	$( '#clear-filters' ).on( 'click', function() {
 		$( 'select' ).selectric( 'refresh' );
 	} );
 
+	$( '.guide__button' ).on( 'click', function() {
+		$( this ).next().slideToggle();
+	} );
 
-	$('.guide__button').on('click', function() {
-		$(this).next().slideToggle();
-	})
+	$( '.post__hide' ).on( 'click', function() {
+		$( this ).parent().parent().fadeOut();
+	} );
 
-	$('.post__hide').on('click', function() {
-		$(this).parent().parent().fadeOut();
+	$('.fontSize button').on('click', function() {
+		let fontSize = $(this).attr('data-font');
+		$('body').css('font-size', `${fontSize}px`);
 	})
 } );
 
 let prevScrollpos = window.pageYOffset;
-let navbar = document.querySelector(".sub-menu");
-let sticky = navbar.offsetTop;
+let navbar = document.querySelector( '.sub-menu' );
+if (navbar){
+	let sticky = navbar.offsetTop;
+}
 
 window.onscroll = function() {
 	const currentScrollPos = window.pageYOffset;
@@ -73,14 +78,15 @@ window.onscroll = function() {
 		document.getElementById( 'header' ).style.top = '-108px';
 	}
 	prevScrollpos = currentScrollPos;
-
-	stickyMenu()
+	if (navbar) {
+		stickyMenu();
+	}
 };
 
 function stickyMenu() {
 	if (window.pageYOffset >= sticky) {
-		navbar.classList.add("sub-menu--sticky")
+		navbar.classList.add( 'sub-menu--sticky' );
 	} else {
-		navbar.classList.remove("sub-menu--sticky");
+		navbar.classList.remove( 'sub-menu--sticky' );
 	}
 }

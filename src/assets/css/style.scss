@@ -326,7 +326,7 @@ h1.logo {
     justify-content: center;
 
     @include res(tab) {
-      align-items: flex-start;
+      align-items: center;
     }
 
     > div {
