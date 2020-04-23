@@ -9,6 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="main-content">
 <header id="header" class="header">
     <div class="container header__container">
         <div class="header__section header__section--left">

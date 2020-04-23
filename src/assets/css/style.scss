@@ -40,7 +40,7 @@ input, textarea {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--body-background-color);
+  background: linear-gradient(to right, #B0B0B0 50%, #252525 50%);
   color: var(--font-color);
   overflow-x: hidden;
 
@@ -62,6 +62,10 @@ body {
     --form-borders-color: #fff;
 
   }
+}
+
+.main-content {
+  background-color: var(--body-background-color);
 }
 
 // override default guttenberg styles
