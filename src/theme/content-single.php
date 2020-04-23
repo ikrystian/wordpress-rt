@@ -2,12 +2,12 @@
     <div class="container">
         <button id="back" class="back-button">
             <span class="material-icons">arrow_back</span>
-            <span class="back-button__text">Wróć</span>
+            <span class="back-button__text"><?= __('Wróć'); ?></span>
         </button>
         <!-- change to global title-->
         <h1 class="slider__title single__title">
             <a href="#" class="slider__title-link"><?php the_title(); ?></a>
-            <a href="#" class="category-button">wystawa</a>
+            <a href="#" class="category-button"><?= __('wystawa'); ?></a>
         </h1>
     </div>
     <?php if (!is_single()) : ?>
@@ -41,11 +41,11 @@
     <div class="sub-menu sub-menu--single">
         <nav class="container">
             <ul class="tabs">
-                <li><a href="#" class="active">O wystawie</a></li>
-                <li><a href="#">Kolofon</a></li>
+                <li><a href="#" class="active"><?= __('O wystawie'); ?></a></li>
+                <li><a href="#"><?= __('Kolofon'); ?></a></li>
             </ul>
             <ul class="post-social post-social--single">
-                <li class="post-social__title">Podziel się:</li>
+                <li class="post-social__title"><?= __('Podziel się'); ?>:</li>
                 <li class="post-social__icon">
                     <a href="#" class="post-social__link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="104.028" height="101.59"
@@ -113,15 +113,15 @@
                             <?= the_field('price'); ?>
                         </li>
                         <li>
-                            <h3><span class="material-icons">translate</span>Język</h3>
+                            <h3><span class="material-icons">translate</span><?= __('Język'); ?></h3>
                             <?= the_field('language'); ?>
                         </li>
                         <li>
-                            <h3><span class="material-icons">group</span>Kuratorz</h3>
+                            <h3><span class="material-icons">group</span><?= __('Kuratorzy'); ?></h3>
                             <?= the_field('curators'); ?>
                         </li>
                         <li>
-                            <h3><span class="material-icons">hearing</span>Audiodeskrypcja</h3>
+                            <h3><span class="material-icons">hearing</span><?= __('Audiodeskrypcja'); ?></h3>
                             <?= the_field('audiodescription'); ?>
                         </li>
                     </ul>

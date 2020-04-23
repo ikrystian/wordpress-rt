@@ -1269,9 +1269,10 @@ ul.page-numbers {
     z-index: 2;
     flex: 1 1 auto;
 
-    h2 {
-      font-size: 1.5em;
+    > h2 {
+      font-size: 2em;
       font-weight: 900;
+      margin-bottom: 1rem;
     }
   }
 

@@ -3,7 +3,7 @@
 	<div class="post__thumbnail">
 		<a href="<?php the_permalink(); ?>">
             <ul class="post__icons">
-                <li>Wystawa</li>
+                <li><?= __('Wystawa'); ?></li>
                 <li><span class="material-icons">wb_iridescent</span></li>
                 <li><span class="material-icons">translate</span></li>
             </ul>
@@ -20,11 +20,11 @@
         <ul class="slider__meta">
             <li>
                 <span class="material-icons">calendar_today</span>
-                <span>06.12.2019 - 05.01.2020</span>
+                <span><?= the_field('start_date'); ?> - <?= the_field('end_date'); ?></span>
             </li>
             <li>
                 <span class="material-icons">location_on</span>
-                <span>Galeria XXX</span>
+                <span><?= the_field('location'); ?></span>
             </li>
         </ul>
 

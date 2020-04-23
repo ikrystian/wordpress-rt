@@ -48,7 +48,7 @@
                         </select>
                     </div>
                     <div class="filters-form__group">
-                        <label for="location">Język</label>
+                        <label for="location">Lokacja</label>
                         <select name="location" id="location">
                             <option value="">Wszędzie</option>
                             <option value="">Galeria XXX</option>
