@@ -45,9 +45,10 @@
   box-sizing: border-box;
   outline: none;
 
-  &:focus {
-    border: 1px solid red !important;
-  }
+  // uncomment for development audit
+  //&:focus {
+  //  border: 1px solid red !important;
+  //}
 }
 
 button {
@@ -1200,6 +1201,15 @@ ul.page-numbers {
         }
       }
     }
+  }
+}
+
+.owl-item {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+
+  &:not(.active) {
+    opacity: 0.2;
   }
 }
 

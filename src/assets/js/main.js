@@ -2,6 +2,7 @@ $( window ).on( 'load', function() {
 	$( 'select' ).selectric();
 
 	$( '.owl-carousel' ).owlCarousel( {
+		stagePadding: 50,
 		loop: true,
 		items: 2,
 		dots: false,
