@@ -9,11 +9,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="main-content">
+<div class="main-content" id="main-content">
 <header id="header" class="header">
     <div class="container header__container">
         <div class="header__section header__section--left">
-            <h1 class="logo"><a href="/">Logo</a></h1>
+            <h1 class="logo"><a href="/" id="logo">Logo</a></h1>
         </div>
         <div class="header__section header__section--right">
 
@@ -36,7 +36,7 @@
             </nav>
 
             <button id="toggle-nav" class="toggle-nav-button">
-                menu
+                <?= __('menu'); ?>
                 <span aria-hidden="true"></span>
             </button>
         </div>

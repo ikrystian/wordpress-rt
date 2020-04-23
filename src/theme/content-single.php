@@ -98,7 +98,8 @@
                 <div class="single__info">
                     <ul class="single__meta event-meta">
                         <li>
-                            <h3 class="event-meta__title"><?= the_field('start_date'); ?> - <?= the_field('end_date'); ?> </h3>
+                            <h3 class="event-meta__title"><?= the_field('start_date'); ?>
+                                - <?= the_field('end_date'); ?> </h3>
                             <p class="event-meta__start-end">
                                 <span><?= __('Rozpoczęcie'); ?>: <?= the_field('start_hour'); ?> </span>
                                 <span><?= __('Zakońćzenie'); ?>: <?= the_field('end_hour'); ?> </span>
@@ -143,6 +144,62 @@
                 </div>
             </div>
         </div>
+
+        <section class="section section--today">
+            <div class="container">
+                <?php get_template_part('content', 'slider'); ?>
+            </div>
+
+        </section>
+        <section class="section section--single">
+            <div class="container">
+                <h3 class="section__title"><?= __('Podobne wydarzenia'); ?></h3>
+
+                <div class="section__posts">
+                    <?php
+                    query_posts(
+                        array(
+                            'post_type' => 'post',
+                            'posts_per_page' => 2
+                        )
+                    );
+                    while (have_posts()) : the_post();
+                        ?>
+                        <div class="post post--posed">
+                            <div class="post__thumbnail">
+                                <a href="<?php the_permalink(); ?>">
+                                    <ul class="post__icons">
+                                        <li><?= __('Wystawa'); ?></li>
+                                        <li><span class="material-icons">wb_iridescent</span></li>
+                                        <li><span class="material-icons">translate</span></li>
+                                    </ul>
+                                    <?php the_post_thumbnail('medium'); ?>
+                                </a>
+                            </div>
+                            <div class="post__content">
+                                <h2 class="post__title">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h2>
+                                <ul class="slider__meta">
+                                    <li>
+                                        <span class="material-icons">calendar_today</span>
+                                        <span><?= the_field('start_date'); ?> - <?= the_field('end_date'); ?></span>
+                                    </li>
+                                    <li>
+                                        <span class="material-icons">location_on</span>
+                                        <span>Galeria XXX</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
+                </div>
+            </div>
+        </section>
+
 
     </div>
 </article>

@@ -40,7 +40,7 @@ get_header();
     </div>
 </section>
 
-<section class="section">
+<section class="secction">
     <div class="container">
         <h3 class="section__title"><?= __('Jutro'); ?></h3>
         <span class="section__date"><?= __('Piątek'); ?></span>

@@ -85,6 +85,10 @@ $( window ).on( 'load', function() {
 			backgroundAlpha: 0.00,
 		} );
 	}
+
+	$('#go-to-top').on('click', function() {
+		$('#logo').focus();
+	})
 } );
 
 let prevScrollpos = window.pageYOffset;

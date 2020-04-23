@@ -17,6 +17,10 @@
         <?= __('Realizacja'); ?> <a href="#">Lorem</a>
     </p>
 
+    <a href="#main-content" class="go-to-top" id="go-to-top" title="<?= __('Przejdź na górę strony'); ?>">
+        <span class="material-icons">keyboard_arrow_up</span>
+    </a>
+
 </footer>
 </div>
 <?php wp_footer(); ?>

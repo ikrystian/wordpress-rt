@@ -7,7 +7,7 @@
 :root {
   --body-background-color: #fff;
   --font-color: #252525;
-  --header-height: 108px;
+  --header-height: 90px;
   --warn-color: #C92F33;
   --light-gray: #E0E0E0;
   --category-border-color: #eeeeee;
@@ -44,6 +44,10 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+
+  &:focus {
+    border: 1px solid red !important;
+  }
 }
 
 button {
@@ -56,21 +60,15 @@ input, textarea {
   font-family: var(--font-family);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
   background: linear-gradient(to right, #B0B0B0 50%, #252525 50%);
   color: var(--font-color);
   overflow-x: hidden;
-
-  &::before {
-    content: '';
-    background-color: var(--body-background-color);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: var(--header-height);
-  }
 
   &.disabled {
     overflow-y: hidden;
@@ -190,12 +188,14 @@ h1.logo {
     font-weight: 900;
     text-transform: uppercase;
     opacity: 0.85;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: inline-block;
 
     &:hover,
     &:focus {
       opacity: 1;
       text-decoration: underline;
+      transform: scale(1.1);
     }
   }
 }
@@ -298,7 +298,7 @@ h1.logo {
       height: 2px;
       positioN: absolute;
       display: block;
-      top: 50%;
+      top: 26px;
       right: 0;
       transform: translateY(-3px);
       background-color: var(--font-color);
@@ -424,6 +424,12 @@ h1.logo {
     margin-right: 0.5rem;
     text-decoration: none;
     letter-spacing: 0.01em;
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: var(--font-color);
+    }
 
     &--active {
       color: var(--font-color);
@@ -610,6 +616,10 @@ h1.logo {
   padding: 2rem;
   position: relative;
   overflow-x: hidden;
+
+  &--single {
+    padding-bottom: 4rem;
+  }
 
   &--today {
     color: var(--feature-section-color);
@@ -1082,6 +1092,7 @@ ul.page-numbers {
   background-color: var(--feature-section-background-color);
   color: #fff;
   padding: 0.5rem;
+  position: relative;
 
   @include res(tab) {
     flex-direction: row;
@@ -1185,7 +1196,7 @@ ul.page-numbers {
 
         &::after {
           opacity: 1;
-          transform: translateY(-0.25rem);
+          transform: translateY(2px);
         }
       }
     }
@@ -1291,7 +1302,7 @@ ul.page-numbers {
 }
 
 .single {
-  margin: var(--header-height) auto 2rem;
+  margin: var(--header-height) auto 0;
 
   &__title {
     margin-bottom: 1rem;
@@ -1692,5 +1703,26 @@ ul.page-numbers {
     right: -2px;
     top: 50%;
     transform: translateY(-50%);
+  }
+}
+
+.go-to-top {
+  position: absolute;
+  top: -6rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background-color: var(--feature-section-background-color);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  text-decoration: none;
+  transition: border-radius 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-radius: 50%;
   }
 }
