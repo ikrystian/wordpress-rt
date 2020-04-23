@@ -58,23 +58,23 @@ $( window ).on( 'load', function() {
 		$( this ).parent().parent().fadeOut();
 	} );
 
-	$('.fontSize button').on('click', function() {
-		let fontSize = $(this).attr('data-font');
-		$('body').css('font-size', `${fontSize}px`);
-	})
+	$( '.fontSize button' ).on( 'click', function() {
+		let fontSize = $( this ).attr( 'data-font' );
+		$( 'body' ).css( 'font-size', `${ fontSize }px` );
+	} );
 
-	$('.tabs a').on('click', function(e) {
+	$( '.tabs a' ).on( 'click', function( e ) {
 		e.preventDefault();
-		$('.tabs a').removeClass('active');
-		$(this).addClass('active');
-	})
+		$( '.tabs a' ).removeClass( 'active' );
+		$( this ).addClass( 'active' );
+	} );
 } );
 
 let prevScrollpos = window.pageYOffset;
 let navbar = document.querySelector( '.sub-menu' );
-if (navbar){
+
 	let sticky = navbar.offsetTop;
-}
+
 
 window.onscroll = function() {
 	const currentScrollPos = window.pageYOffset;
@@ -84,15 +84,15 @@ window.onscroll = function() {
 		document.getElementById( 'header' ).style.top = '-108px';
 	}
 	prevScrollpos = currentScrollPos;
-	if (navbar) {
 		stickyMenu();
-	}
 };
 
 function stickyMenu() {
-	if (window.pageYOffset >= sticky) {
-		navbar.classList.add( 'sub-menu--sticky' );
-	} else {
-		navbar.classList.remove( 'sub-menu--sticky' );
-	}
+
+		if (window.pageYOffset >= sticky) {
+			navbar.classList.add( 'sub-menu--sticky' );
+		} else {
+			navbar.classList.remove( 'sub-menu--sticky' );
+		}
+
 }

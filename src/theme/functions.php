@@ -89,11 +89,28 @@ function guide_shortcode($atts)
     return '
         <section class="guide">
             <button class="secondary-button guide__button">pokaż przewodnik po wystawie</button>
-            <iframe width="835" height="515" src="https://www.youtube.com/embed/' .$a['id']. '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="835" height="515" src="https://www.youtube.com/embed/' . $a['id'] . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>';
 }
 
 add_shortcode('guide', 'guide_shortcode');
+
+function person_shortcode($atts)
+{
+    $a = shortcode_atts(array(
+        'name' => '',
+        'email' => '',
+        'phone' => ''
+    ), $atts);
+    return '
+        <div class="person">
+            <h3 class="person__name">'.$a['name'].'</h3>
+            <p class="person__email"><span class="material-icons">call</span><a href="mailto:'.$a['email'].'">'.$a['email'].'</a></p>
+            <p class="person__phone"><span class="material-icons">email</span><a href="tel:'.$a['phone'].'">'.$a['phone'].'</a></p>
+        </div>';
+}
+
+add_shortcode('person', 'person_shortcode');
 
 
 function the_breadcrumb()
