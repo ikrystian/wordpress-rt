@@ -64,6 +64,21 @@ body {
   }
 }
 
+// override default guttenberg styles
+.wp-block-buttons .wp-block-button {
+  display: block;
+  margin: 0;
+}
+
+.wp-block-embed-youtube {
+  margin: 1rem;
+
+  .wp-block-embed__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .category-button {
   display: inline-flex;
   padding: 2px 0.5rem;
@@ -81,8 +96,11 @@ body {
     text-decoration: none;
   }
 }
+
 // !todo to refactoring
-.secondary-button {
+.secondary-button,
+.wp-block-button__link {
+  display: block;
   background-color: var(--font-color);
   border: 3px solid var(--font-color);
   color: #fff;
@@ -91,23 +109,26 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
+  border-radius: 0;
 
-  span {
-    z-index: 2;
-    position: relative;
-  }
-
-  &::before {
+  &::before, &:after {
     display: none;
     width: 48px;
     position: absolute;
     content: '';
-    top: -3px;
-    bottom: -3px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--body-background-color);
     z-index: 1;
+    height: 5px;
+  }
+
+  &::before {
+    top: -4px;
+  }
+
+  &::after {
+    bottom: -4px;
   }
 
   &:hover,
@@ -115,8 +136,27 @@ body {
     background-color: var(--body-background-color);
     color: var(--font-color);
 
-    &::before {
+    &::before,
+    &:after {
       display: block;
+    }
+  }
+}
+
+h1.logo {
+  a {
+    color: var(--font-color);
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      text-decoration: underline;
     }
   }
 }
@@ -992,6 +1032,10 @@ ul.page-numbers {
     left: 0;
     right: 0;
     background-color: var(--body-background-color);
+
+    + .posts-list {
+      padding-top: 77.2px
+    }
   }
 
   &--single {
@@ -1189,6 +1233,7 @@ ul.page-numbers {
     margin-top: -2rem;
     position: relative;
     z-index: 2;
+    flex: 1 1 auto;
   }
 
   &__sidebar {
@@ -1283,7 +1328,7 @@ ul.page-numbers {
     display: block;
   }
 
-  .wpcf7-form-control {
+  .wpcf7-submit {
     border: 3px solid var(--font-color);
     padding: 0.75rem 1rem;
   }
@@ -1294,7 +1339,6 @@ ul.page-numbers {
     transform: translateY(-50%);
     right: 1rem;
   }
-
 
   div.wpcf7-response-output {
     margin: -1rem 0 0;
@@ -1313,5 +1357,22 @@ ul.page-numbers {
   &__title {
     font-size: 1.5em;
     font-weight: 900;
+  }
+}
+
+
+.guide {
+  margin: 1rem 0;
+
+  &__button {
+    display: flex;
+    margin-bottom: 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  iframe {
+    display: none;
+    max-width: 100%;
   }
 }

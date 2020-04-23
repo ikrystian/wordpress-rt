@@ -100,6 +100,12 @@
 
                     <?php the_content(); ?>
 
+                    <?php if (get_field('yt_movie')) : ?>
+                        <section class="guide">
+                            <button class="secondary-button guide__button">pokaż przewodnik po wystawie</button>
+                        <?= get_field('yt_movie'); ?>
+                        </section>
+                    <?php endif; ?>
                     <?php
                     // If comments are open or we have at least one comment, load up the comment template.
                     if (comments_open() || get_comments_number()) :

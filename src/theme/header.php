@@ -12,7 +12,7 @@
 <header id="header" class="header">
     <div class="container header__container">
         <div class="header__section header__section--left">
-            <h1><a href="/">Logo</a></h1>
+            <h1 class="logo"><a href="/">Logo</a></h1>
         </div>
         <div class="header__section header__section--right">
 

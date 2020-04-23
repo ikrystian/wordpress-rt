@@ -51,9 +51,9 @@ $( window ).on( 'load', function() {
 		$( 'select' ).selectric( 'refresh' );
 	} );
 
-	$('.fontSize button').on('click', function() {
-		let fontSize = $(this).attr('data-font');
-		$('body').css('font-size', `${fontSize}px`);
+
+	$('.guide__button').on('click', function() {
+		$(this).next().slideToggle();
 	})
 } );
 
