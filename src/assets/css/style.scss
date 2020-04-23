@@ -522,7 +522,7 @@ h1.logo {
       padding: 1rem;
       width: 630px;
       max-width: 100%;
-
+      z-index: 4;
       @include res(desktop) {
         padding: 2rem 60px 2rem 2rem;
         transform: translateX(30px);
@@ -541,6 +541,11 @@ h1.logo {
       object-fit: cover;
       width: 100%;
       height: 100%;
+      z-index: 1;
+    }
+
+    canvas {
+      z-index: 2 !important;
     }
   }
 
@@ -721,7 +726,8 @@ h1.logo {
   justify-content: space-between;
   align-items: center;
 
-  &__fields {
+  &__fields,
+  &__actions {
     display: flex;
   }
 
@@ -729,7 +735,7 @@ h1.logo {
     position: relative;
   }
 
-  &__clear-button {
+  &__button {
     border: 0;
     background-color: transparent;
     display: flex;
@@ -742,6 +748,10 @@ h1.logo {
 
     &:hover, &:focus {
       color: #fff;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 1rem;
     }
 
     .material-icons {

@@ -12,7 +12,8 @@
         </header>
     </div>
 
-    <aside class="filters">
+
+    <aside class="filters" style="display: block;">
         <div class="container">
             <form action="" class="filters-form">
                 <div class="filters-form__fields">
@@ -43,9 +44,16 @@
                     </div>
                     <div class="filters-form__group">
                         <label for="category">Kategoria</label>
-                        <select name="category" id="category">
-                            <option value="">lorem</option>
-                        </select>
+                        <?php
+                        $args = array(
+                            'show_count' => 1,
+                            'orderby' => 'name',
+                            'echo' => 0,
+                        );
+                        $select = wp_dropdown_categories($args);
+                        $replace = "<select>";
+                        $select = preg_replace('#<select([^>]*)>#', $replace, $select);
+                        echo $select; ?>
                     </div>
                     <div class="filters-form__group">
                         <label for="location">Lokacja</label>
@@ -59,9 +67,14 @@
                     </div>
                 </div>
                 <div class="filters-form__actions">
-                    <button class="filters-form__clear-button" type="reset" id="clear-filters">
+                    <button class="filters-form__button" type="reset" id="clear-filters">
                         <span class="material-icons">close</span>
                         <span>wyczyść</span>
+                    </button>
+
+                    <button class="filters-form__button" type="submit">
+                        <span class="material-icons">filters</span>
+                        <span>Filtruj</span>
                     </button>
                 </div>
             </form>

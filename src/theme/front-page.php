@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<section class="slider">
+<section class="slider" id="slider">
     <div class="slider__content">
         <article>
             <ul class="slider__meta">
@@ -25,12 +25,12 @@ get_header();
             </p>
         </article>
     </div>
-    <div class="slider__image">
+    <div class="slider__image" id="slider-image">
         <img src="<?php bloginfo('template_url'); ?>/img/slider.jpg" alt="slider sampke image">
     </div>
 </section>
 
-<section class="section section--today">
+<section class="section section--today" id="today">
     <div class="container">
         <h3 class="section__title">Dziś</h3>
         <span class="section__date">Czwartek</span>

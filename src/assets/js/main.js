@@ -68,13 +68,28 @@ $( window ).on( 'load', function() {
 		$( '.tabs a' ).removeClass( 'active' );
 		$( this ).addClass( 'active' );
 	} );
+
+	VANTA.BIRDS({
+		el: "#slider-image",
+		mouseControls: true,
+		touchControls: true,
+		minHeight: 200.00,
+		minWidth: 200.00,
+		scale: 1.00,
+		scaleMobile: 1.00,
+		color1: 0xffffff,
+		color2: 0xfff000,
+		colorMode: "lerp",
+		backgroundAlpha: 0.00
+	})
 } );
 
 let prevScrollpos = window.pageYOffset;
 let navbar = document.querySelector( '.sub-menu' );
 
+if (navbar) {
 	let sticky = navbar.offsetTop;
-
+}
 
 window.onscroll = function() {
 	const currentScrollPos = window.pageYOffset;
@@ -84,15 +99,16 @@ window.onscroll = function() {
 		document.getElementById( 'header' ).style.top = '-108px';
 	}
 	prevScrollpos = currentScrollPos;
+	if (navbar) {
 		stickyMenu();
+	}
 };
 
 function stickyMenu() {
 
-		if (window.pageYOffset >= sticky) {
-			navbar.classList.add( 'sub-menu--sticky' );
-		} else {
-			navbar.classList.remove( 'sub-menu--sticky' );
-		}
-
+	if (window.pageYOffset >= sticky) {
+		navbar.classList.add( 'sub-menu--sticky' );
+	} else {
+		navbar.classList.remove( 'sub-menu--sticky' );
+	}
 }

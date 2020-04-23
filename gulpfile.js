@@ -68,7 +68,10 @@ Header & Footer JavaScript Boundles
 const headerJS = [
 	'./node_modules/jquery/dist/jquery.js',
 	'./node_modules/selectric/public/jquery.selectric.min.js',
-	'./node_modules/owl.carousel/dist/owl.carousel.min.js'
+	'./node_modules/owl.carousel/dist/owl.carousel.min.js',
+	'./node_modules/three/build/three.js',
+	'./node_modules/p5/lib/p5.min.js',
+	'./node_modules/vanta/dist/vanta.birds.min.js',
 ];
 
 const footerJS = ['./src/assets/js/**'];
