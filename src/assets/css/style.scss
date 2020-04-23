@@ -772,8 +772,19 @@ h1.logo {
   position: relative;
   margin-bottom: 1rem;
 
-  &--closed {
-
+  &__hide {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    padding: 0.25rem 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    right: 0;
+    border: 0;
+    background-color: var(--body-background-color);
+    transform: rotate(-90deg) translate(50%, 60px);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
   }
 
   &--disabled,
@@ -804,6 +815,12 @@ h1.logo {
       background-color: #fafafa;
       height: calc(100% - 78px);
       clip-path: polygon(0 1rem, calc(100% - 1rem) 1rem, calc(100% - 1rem) calc(100% - 1rem), 0 calc(100% - 1rem));
+    }
+
+    &:hover {
+      .post__hide {
+        opacity: 1;
+      }
     }
 
     a {

@@ -55,6 +55,10 @@ $( window ).on( 'load', function() {
 	$('.guide__button').on('click', function() {
 		$(this).next().slideToggle();
 	})
+
+	$('.post__hide').on('click', function() {
+		$(this).parent().parent().fadeOut();
+	})
 } );
 
 let prevScrollpos = window.pageYOffset;
