@@ -87,7 +87,6 @@ body {
     --feature-section-background-color: #eeeeee;
     --feature-section-color: #252525;
     --form-borders-color: #fff;
-
   }
 }
 
@@ -181,7 +180,7 @@ body {
   }
 }
 
-h1.logo {
+.logo {
   a {
     color: var(--font-color);
     font-size: 1em;
@@ -343,23 +342,26 @@ h1.logo {
   }
 
   &__menus {
+    --align-items: flex-start;
     margin: auto;
     height: 100%;
     padding: 1rem;
     display: flex;
-    align-items: flex-start;
+    align-items: var(--align-items);
     justify-content: center;
 
     @include res(tab) {
-      align-items: center;
+      --align-items: center;
     }
 
     > div {
+      --flex-direction: column;
+
       display: flex;
-      flex-direction: column;
+      flex-direction: var(--flex-direction);
 
       @include res(desktop) {
-        flex-direction: row;
+        --flex-direction: row;
       }
     }
   }
@@ -839,6 +841,7 @@ h1.logo {
 .post {
   position: relative;
   margin-bottom: 1rem;
+  z-index: 2;
 
   &__hide {
     position: absolute;
@@ -1204,6 +1207,10 @@ ul.page-numbers {
   }
 }
 
+.owl-stage-outer {
+  z-index: 2;
+}
+
 .owl-item {
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
@@ -1220,7 +1227,7 @@ ul.page-numbers {
   top: 30%;
   left: -2rem;
   right: -2rem;
-
+  z-index: 1;
   // override owl-carousel theme
   button {
     font-size: 2em !important;

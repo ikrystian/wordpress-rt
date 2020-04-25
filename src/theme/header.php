@@ -20,7 +20,7 @@
             <nav>
                 <ul class="utils">
                     <li class="utils__item">
-                        <button class="utils__button contrast-button">Kontrast</button>
+                        <button class="utils__button contrast-button"><?= __('Kontrast') ?></button>
                     </li>
                     <li class="utils__item fontSize">
                         <button class="utils__button utils__button contrast-button--active" data-font="16">A</button>
