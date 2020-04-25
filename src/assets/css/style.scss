@@ -542,7 +542,7 @@ body {
   &__image {
     height: 30vh;
 
-    @include res(desktop) {
+    @include res(tab) {
       height: unset;
     }
 
