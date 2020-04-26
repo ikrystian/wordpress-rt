@@ -616,9 +616,22 @@ body {
 }
 
 .section {
-  padding: 2rem;
+  --padding: 0.25rem;
+  padding: var(--padding);
   position: relative;
   overflow-x: hidden;
+
+  @include res(phone) {
+    --padding: 0.5rem;
+  }
+
+  @include res(tab) {
+    --padding: 1rem;
+  }
+
+  @include res(desktop) {
+    --padding: 1.5rem;
+  }
 
   &--single {
     padding-bottom: 4rem;
@@ -653,11 +666,16 @@ body {
   }
 
   &__title {
-    font-size: 4.5em;
+    --font-size: 2em;
+    font-size: var(--font-size);
     padding-left: 1rem;
     font-weight: 900;
     position: relative;
     overflow: hidden;
+
+    @include res(tab) {
+      --font-size: 4.5em;
+    }
 
     &::after {
       height: 1px;
