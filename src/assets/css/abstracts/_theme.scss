@@ -1,0 +1,11 @@
+body {
+  &.dark-theme {
+    --body-background-color: #252525;
+    --font-color: #fff;
+    --light-gray: #E0E0E0;
+    --category-border-color: #252525;
+    --feature-section-background-color: #eeeeee;
+    --feature-section-color: #252525;
+    --form-borders-color: #fff;
+  }
+}
