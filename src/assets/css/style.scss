@@ -188,6 +188,7 @@ body {
     font-weight: 900;
     text-transform: uppercase;
     opacity: 0.85;
+    will-change: opacity, transform;
     transition: opacity 0.2s ease, transform 0.2s ease;
     display: inline-block;
 
@@ -292,7 +293,6 @@ body {
       }
     }
 
-    // refactor in future
     span {
       width: 16px;
       height: 2px;
@@ -319,9 +319,7 @@ body {
       &::after {
         top: unset;
         bottom: calc(50% - 8px);
-
       }
-
     }
   }
 }
@@ -370,12 +368,14 @@ body {
 
   .menu-main-container,
   .menu-secondary-menu-container {
+    --padding: 0 1rem;
+
     width: 445px;
     max-width: 100vw;
-    padding: 0 1rem;
+    padding: var(--padding);
 
     @include res(tab) {
-      padding: 0;
+      --padding: 0;
     }
   }
 
@@ -383,7 +383,8 @@ body {
     list-style: none;
 
     a {
-      font-size: 1em;
+      --font-size: 1em;
+      font-size: var(--font-size);
       padding: 0.25rem 0;
       display: inline-block;
       font-weight: 800;
@@ -392,8 +393,7 @@ body {
       transition: color 0.2s ease-in-out;
 
       @include res(tab) {
-        font-size: 2em;
-
+        --font-size: 2em;
       }
 
       &.not-active {
@@ -404,13 +404,14 @@ body {
 }
 
 .utils {
-  display: none;
+  --display: none;
+  display: var(--display);
   width: 100%;
   justify-content: space-between;
   list-style: none;
 
   @include res(desktop) {
-    display: flex;
+    --display: flex;
   }
 
   &__item {
