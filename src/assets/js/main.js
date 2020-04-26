@@ -1,4 +1,7 @@
+
 $( window ).on( 'load', function() {
+	$('.loader').fadeOut();
+
 	$( 'select' ).selectric();
 
 	$( '.owl-carousel' ).owlCarousel( {
