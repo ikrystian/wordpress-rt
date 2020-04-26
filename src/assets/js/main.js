@@ -51,8 +51,9 @@ $( window ).on( 'load', function() {
 	} );
 
 	$( '#clear-filters' ).on( 'click', function() {
-		$( 'select' ).selectric( 'refresh' );
+		$('select').selectric('refresh');
 	} );
+
 
 	$( '.guide__button' ).on( 'click', function() {
 		$( this ).next().slideToggle();
