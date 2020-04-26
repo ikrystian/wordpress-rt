@@ -23,7 +23,7 @@ $( window ).on( 'load', function() {
 	} );
 
 	$( '.opening-hours__button' ).on( 'click', function() {
-		$( '.opening-hours__content' ).toggleClass( 'opening-hours__content--opened' );
+		$( '.opening-hours__content' ).slideToggle();
 	} );
 
 	$( '#toggle-nav' ).on( 'click', function() {

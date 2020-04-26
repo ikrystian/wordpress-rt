@@ -67,7 +67,7 @@ html {
 
 body {
   font-family: var(--font-family);
-  background: linear-gradient(to right, #B0B0B0 50%, #252525 50%);
+  //background: linear-gradient(to right, #B0B0B0 50%, #252525 50%);
   color: var(--font-color);
   overflow-x: hidden;
 
@@ -454,10 +454,6 @@ body {
     width: 315px;
     right: 0;
     display: none;
-
-    &--opened {
-      display: block;
-    }
   }
 
   &__title {
@@ -1269,7 +1265,7 @@ ul.page-numbers {
   margin-top: 2rem;
 
   @include res(desktop) {
-    padding: 0 2rem;
+    padding: 0 2rem 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
   }
