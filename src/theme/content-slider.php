@@ -5,7 +5,7 @@
         ?>
         <div class="post">
             <div class="post__thumbnail">
-                <a href="<?php the_permalink(); ?>">
+                <a  href="<?php the_permalink(); ?>">
                     <ul class="post__icons">
                         <li><?= __('Wystawa'); ?></li>
                         <li><span class="material-icons">wb_iridescent</span></li>
@@ -16,7 +16,7 @@
             </div>
             <div class="post__content">
                 <h2 class="post__title post__title--light">
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <a class="post__title-link" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
                 <ul class="slider__meta">
                     <li>

@@ -13,7 +13,7 @@
   --category-border-color: #eeeeee;
   --feature-section-background-color: #252525;
   --feature-section-color: #fff;
-
+  --action-border-color: #000;
   --breadcrumbs-link-color: #9E9E9E;
   --form-borders-color: #B0B0B0;
   --form-borders-active-color: #252525;
@@ -80,6 +80,7 @@ body {
   }
 
   &.dark-theme {
+    // override all css3 vars to get dark theme / contrast mode
     --body-background-color: #252525;
     --font-color: #fff;
     --light-gray: #E0E0E0;
@@ -95,7 +96,7 @@ body {
   min-height: calc(100vh - var(--header-height));
 }
 
-// override default guttenberg styles
+// override default gutenberg styles
 .wp-block-buttons .wp-block-button {
   display: block;
   margin: 0;
@@ -112,7 +113,7 @@ body {
 
 .alert {
   &--success {
-    color: #039500;
+    color: var(--success-color);
   }
 }
 
@@ -210,7 +211,7 @@ body {
   text-align: center;
   position: relative;
   letter-spacing: 0.01em;
-  border: 4px solid #000;
+  border: 4px solid var(--action-border-color);
   min-width: 160px;
   background-color: var(--body-background-color);
   transition: letter-spacing 0.2s ease;
@@ -862,6 +863,14 @@ body {
   position: relative;
   margin-bottom: 1rem;
   z-index: 2;
+
+  &__title-link {
+    display: block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   &__hide {
     position: absolute;
