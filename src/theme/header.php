@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>"/>
+    <meta name="description" content="Simple wordpress theme">
     <meta name="author" content="BPCoders IT ltd."/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -125,7 +126,6 @@
         </section>
 
         <button class="opening-hours__button">
-            <span class="opening-hours__icon material-icons">query_builder</span>
             <span class="opening-hours__text">godziny otwarcia</span>
         </button>
     </div>

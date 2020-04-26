@@ -47,7 +47,8 @@
             <ul class="post-social post-social--single">
                 <li class="post-social__title"><?= __('Podziel się'); ?>:</li>
                 <li class="post-social__icon">
-                    <a href="#" class="post-social__link">
+                    <a href="#" class="post-social__link" title="facebook">
+                        <span class="hide">facebook</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="104.028" height="101.59"
                              data-name="facebook square" viewBox="0 0 104.028 101.59">
                             <path fill="#475a96" d="M0,0H104.028V101.59H0Z" data-name="Path 24"/>
@@ -58,7 +59,8 @@
                     </a>
                 </li>
                 <li class="post-social__icon">
-                    <a href="#" class="post-social__link">
+                    <a href="#" class="post-social__link" title="twitter">
+                        <span class="hide">twitter</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
                             <g data-name="twitter circle" transform="translate(-126.444 -2.281)">
                                 <circle cx="50" cy="50" r="50" fill="#2daae1" data-name="Ellipse 1"
@@ -71,7 +73,8 @@
                     </a>
                 </li>
                 <li class="post-social__icon">
-                    <a href="#" class="post-social__link">
+                    <a href="#" class="post-social__link" title="linkedin">
+                        <span class="hide">linkedin</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="99.59" height="99.59" viewBox="0 0 99.59 99.59">
                             <defs>
                                 <linearGradient id="a" x1="-1.971" x2="-1.264" y1="2.61" y2="3.317"
@@ -170,7 +173,8 @@
                         ?>
                         <div class="post post--posed">
                             <div class="post__thumbnail">
-                                <a href="<?php the_permalink(); ?>">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <span class="hide"><?php the_title(); ?></span>
                                     <ul class="post__icons">
                                         <li><?= __('Wystawa'); ?></li>
                                         <li><span class="material-icons">wb_iridescent</span></li>

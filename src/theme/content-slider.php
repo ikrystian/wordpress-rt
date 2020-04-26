@@ -5,7 +5,8 @@
         ?>
         <div class="post">
             <div class="post__thumbnail">
-                <a  href="<?php the_permalink(); ?>">
+                <a  href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <span class="hide"><?php the_title(); ?></span>
                     <ul class="post__icons">
                         <li><?= __('Wystawa'); ?></li>
                         <li><span class="material-icons">wb_iridescent</span></li>

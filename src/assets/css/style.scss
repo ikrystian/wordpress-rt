@@ -5,6 +5,7 @@
 @import './abstracts/mixins';
 @import './abstracts/base';
 @import './abstracts/theme';
+@import './abstracts/helpers';
 
 :root {
   --body-background-color: #fff;
@@ -364,11 +365,12 @@
     background-color: transparent;
     text-transform: uppercase;
     font-weight: 900;
-    color: var(--light-gray);
+    color: #757575;
     margin-right: 0.5rem;
     text-decoration: none;
     letter-spacing: 0.01em;
-    transition: color 0.2s ease-in-out;
+    will-change: opacity, color;
+    transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
     &:hover,
     &:focus {
