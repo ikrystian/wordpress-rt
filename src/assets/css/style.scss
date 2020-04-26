@@ -625,12 +625,31 @@ body {
   }
 
   &--today {
+    --padding: 0;
+    padding: var(--padding);
     color: var(--feature-section-color);
     background-color: var(--feature-section-background-color);
+
+    @include res(phone) {
+      --padding: 0.5rem;
+    }
+
+    @include res(tab) {
+      --padding: 1rem;
+    }
+
+    @include res(desktop) {
+      --padding: 1.5rem;
+    }
+
+    @include res(wide) {
+      --padding: 2rem;
+    }
 
     .section__title {
       color: var(--feature-section-color);
     }
+
   }
 
   &__title {
@@ -1763,6 +1782,6 @@ ul.page-numbers {
   &__image {
     margin: auto;
     width: 560px;
-    max-width: 90vw;
+    max-width: 100%;
   }
 }

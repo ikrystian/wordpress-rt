@@ -14,6 +14,7 @@ $( window ).on( 'load', function() {
 		responsive: {
 			0: {
 				items: 1,
+				stagePadding: 0,
 			},
 			960: {
 				items: 2,
