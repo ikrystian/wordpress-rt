@@ -1,6 +1,5 @@
-
 $( window ).on( 'load', function() {
-	$('.loader').fadeOut();
+	$( '.loader' ).fadeOut();
 
 	$( 'select' ).selectric();
 
@@ -91,9 +90,25 @@ $( window ).on( 'load', function() {
 		} );
 	}
 
-	$('#go-to-top').on('click', function() {
-		$('#logo').focus();
-	})
+	let particlesContainer = document.getElementById( 'particles-js' );
+	if (particlesContainer) {
+		particlesJS.load(
+			'particles-js',
+			'/wp-content/themes/recruiting-wordpress-theme/particlesjs-config.json'
+		);
+	}
+
+	$( '#go-to-top' ).on( 'click', function() {
+		$( '#logo' ).focus();
+	} );
+
+	let clicked = 0;
+	$( '.particles-js' ).on( 'click', function() {
+		if (clicked === 4) {
+			$( this ).css( 'opacity', 1 );
+		}
+		clicked++;
+	} );
 } );
 
 let prevScrollpos = window.pageYOffset;

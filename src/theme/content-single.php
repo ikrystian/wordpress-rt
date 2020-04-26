@@ -90,6 +90,9 @@
         </nav>
     </div>
     <div class="single__thumbnail">
+        <div id="particles-js" class="particles-js">
+            <img src="<?php bloginfo('template_url'); ?>/img/cat.gif"" alt="">
+        </div>
         <?php the_post_thumbnail(); ?>
     </div>
     <div class="single__content-wrapper">

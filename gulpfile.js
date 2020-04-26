@@ -72,6 +72,7 @@ const headerJS = [
 	'./node_modules/three/build/three.js',
 	'./node_modules/p5/lib/p5.min.js',
 	'./node_modules/vanta/dist/vanta.birds.min.js',
+	'./node_modules/particles.js/particles.js'
 ];
 
 const footerJS = ['./src/assets/js/**'];
