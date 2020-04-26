@@ -13,8 +13,9 @@
             top: 0;
             right: 0;
             bottom: 0;
-            display: grid;
-            place-items: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #4B525D;
             z-index: 666;
         }
