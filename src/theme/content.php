@@ -28,18 +28,6 @@
                 <span><?= the_field('location'); ?></span>
             </li>
         </ul>
-
-        <?php if (is_search() or is_archive()) : ?>
-            <p class="excerpt content">
-                <a href="<?php the_permalink(); ?>" class="button">Read More</a>
-            </p>
-        <?php endif;
-        if ($post->post_excerpt) : ?>
-            <p class="excerpt">
-                <?php echo get_the_excerpt(); ?>
-                <a href="<?php the_permalink(); ?>" class="button">Read More</a>
-            </p>
-        <?php endif; ?>
     </div>
     <!-- /inner-content -->
 </div>

@@ -15,7 +15,7 @@
 
     <aside class="filters">
         <div class="container">
-            <form method="get"  class="filters-form">
+            <form method="get" class="filters-form">
                 <input type="hidden" name="page_id" value="38">
                 <input type="hidden" name="filter" value="true">
                 <div class="filters-form__fields">
@@ -30,17 +30,17 @@
                     <div class="filters-form__group">
                         <label for="accessibility"><?= __('Dostępność'); ?></label>
                         <select name="accessibility" id="accessibility">
-                            <option value=""><?= __('Niewidomi'); ?></option>
-                            <option value=""><?= __('Niesłyszący'); ?></option>
+                            <option value="blind"><?= __('Niewidomi'); ?></option>
+                            <option value="deaf"><?= __('Niesłyszący'); ?></option>
                         </select>
                     </div>
                     <div class="filters-form__group">
-                        <label for="language"><?= __('Język'); ?></label>
-                        <select name="language" id="language">
-                            <option value=""><?= __('Polski'); ?></option>
-                            <option value=""><?= __('Angielski'); ?></option>
-                            <option value=""><?= __('Ukraiński'); ?></option>
-                            <option value=""><?= __('Inny'); ?></option>
+                        <label for="language_filter"><?= __('Język'); ?></label>
+                        <select name="language_filter" id="language_filter">
+                            <option value="polish"><?= __('Polski'); ?></option>
+                            <option value="english"><?= __('Angielski'); ?></option>
+                            <option value="ukrainian"><?= __('Ukraiński'); ?></option>
+                            <option value="other"><?= __('Inny'); ?></option>
                         </select>
                     </div>
                     <div class="filters-form__group">
@@ -52,18 +52,14 @@
                             'echo' => 0,
                         );
                         $select = wp_dropdown_categories($args);
-                        $replace = "<select>";
+                        $replace = "<select name='category'>";
                         $select = preg_replace('#<select([^>]*)>#', $replace, $select);
                         echo $select; ?>
                     </div>
                     <div class="filters-form__group">
                         <label for="location"><?= __('Lokacja'); ?></label>
                         <select name="location" id="location">
-                            <option value=""><?= __('Wszędzie'); ?></option>
-                            <option value="">Galeria XXX</option>
-                            <option value="">Galeria XXX 2</option>
-                            <option value="">Galeria XXX 3</option>
-                            <option value=""><?= __('Inne'); ?></option>
+                            <option value="gallery"><?= __('Galeria'); ?></option>
                         </select>
                     </div>
                 </div>
@@ -95,6 +91,40 @@
     <!-- main-column -->
     <div class="posts-list container">
         <?php
+
+        if ($_GET['filter'] == true) {
+            $args = array(
+                'cat' => $_GET['category'],
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'for_who',
+                        'value' => $_GET['for-who'],
+                        'compare' => '=',
+                    ),
+                    array(
+                        'key' => 'accessibility',
+                        'value' => $_GET['accessibility'],
+                        'compare' => '='
+                    ),
+                    array(
+                        'key' => 'language_filter',
+                        'value' => $_GET['language_filter'],
+                        'compare' => '='
+                    ),
+                    array(
+                        'key' => 'location',
+                        'value' => $_GET['location'],
+                        'compare' => '='
+                    )
+                )
+            );
+        }
+
+        global $wp_query;
+        $original_query = $wp_query;
+        $wp_query = null;
+        $wp_query = new WP_Query($args);
         if (have_posts()) :
             while (have_posts()) :
                 the_post();
@@ -103,6 +133,9 @@
         else :
             get_template_part('content', 'none');
         endif;
+        $wp_query = null;
+        $wp_query = $original_query;
+        wp_reset_postdata();
         ?>
     </div>
     <!-- /main-column -->
